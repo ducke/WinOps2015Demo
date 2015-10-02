@@ -5,9 +5,9 @@ configuration DemoConfiguration
         [System.Collections.IDictionary] $OctopusParameters
     )
 
-    Import-DscResource -ModuleName DOG_OctopusDeployResources
+#    Import-DscResource -ModuleName DOG_OctopusDeployResources
     Import-DscResource -ModuleName cWebAdministration
-    Import-DscResource -ModuleName cNetworking
+#    Import-DscResource -ModuleName cNetworking
     Import-DscResource -ModuleName PolicyFileEditor
     Import-DscResource -ModuleName cPSDesiredStateConfiguration
 
@@ -15,23 +15,23 @@ configuration DemoConfiguration
     {
         $roles = $OctopusParameters['Octopus.Machine.Roles'] -split ','
 
-        cOctopusDeployTentacle Tentacle
-        {
-            TentacleName         = 'Tentacle'
-            ServerName           = '192.168.50.1'
-            ServerThumbprint     = '324F816071ED1E599C384839860F1B89C18F1581'
-            CommunicationMode    = 'Listen'
-            TentacleInstallerUrl = 'c:\vagrant\temp\Octopus.Tentacle.3.0.4.2105-x64.msi'
-        }
+#        cOctopusDeployTentacle Tentacle
+#        {
+#            TentacleName         = 'Tentacle'
+#            ServerName           = '192.168.50.1'
+#            ServerThumbprint     = '324F816071ED1E599C384839860F1B89C18F1581'
+#            CommunicationMode    = 'Listen'
+#            TentacleInstallerUrl = 'c:\vagrant\temp\Octopus.Tentacle.3.0.4.2105-x64.msi'
+#        }
 
-        cAdministrativeTemplateSetting AllowMultipleRdpSessions
-        {
-            Ensure       = 'Present'
-            PolicyType   = 'Machine'
-            KeyValueName = 'SOFTWARE\Policies\Microsoft\Windows NT\Terminal Services\fSingleSessionPerUser'
-            Type         = 'DWord'
-            Data         = '0'
-        }
+#        cAdministrativeTemplateSetting AllowMultipleRdpSessions
+#        {
+#            Ensure       = 'Present'
+#            PolicyType   = 'Machine'
+#            KeyValueName = 'SOFTWARE\Policies\Microsoft\Windows NT\Terminal Services\fSingleSessionPerUser'
+#            Type         = 'DWord'
+#            Data         = '0'
+#        }
 
         if ($roles -contains 'Web')
         {
