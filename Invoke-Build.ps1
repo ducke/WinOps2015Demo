@@ -120,7 +120,7 @@ function CompileTestMOFs
 {
     $roles = @(
         'Web'
-        'Database'
+        #'Database'
     )
 
     Import-Module DemoConfiguration -ErrorAction Stop
