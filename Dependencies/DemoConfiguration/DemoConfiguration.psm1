@@ -15,6 +15,7 @@ configuration DemoConfiguration
     {
         $roles = $OctopusParameters['Octopus.Machine.Roles'] -split ','
 
+        write $roles
 #        cOctopusDeployTentacle Tentacle
 #        {
 #            TentacleName         = 'Tentacle'
