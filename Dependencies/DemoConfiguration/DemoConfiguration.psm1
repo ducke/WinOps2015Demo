@@ -5,6 +5,7 @@ configuration DemoConfiguration
         [System.Collections.IDictionary] $OctopusParameters
     )
 
+
 #    Import-DscResource -ModuleName DOG_OctopusDeployResources
     Import-DscResource -ModuleName cWebAdministration
 #    Import-DscResource -ModuleName cNetworking
