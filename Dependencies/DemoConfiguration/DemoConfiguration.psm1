@@ -104,7 +104,7 @@ configuration DemoConfiguration
             File dbFlag
             {
                 DestinationPath = 'C:\DscFile.txt'
-                Contents        = 'I am a database server.  Honest! - v4'
+                Contents        = $OctopusParameters['Stage']
             }
         }
     }
