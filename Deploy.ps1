@@ -155,7 +155,7 @@ NotAfter = "$((Get-Date).AddYears(20).ToString('G'))"
                     CertificateID        = $cert.Thumbprint
                     ActionAfterReboot    = 'ContinueConfiguration'
                     RebootNodeIfNeeded   = $true
-                    ConfigurationMode    = 'ApplyAndAutoCorrect'
+                    ConfigurationMode    = 'ApplyOnly' #'Correct'
                     AllowModuleOverwrite = $true
                     DebugMode            = 'ForceModuleImport'
                 }
