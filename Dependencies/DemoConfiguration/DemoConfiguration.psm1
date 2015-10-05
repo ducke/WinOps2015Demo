@@ -4,7 +4,8 @@ configuration DemoConfiguration {
     [System.Collections.IDictionary] $OctopusParameters
   )
 
-  Import-DscResource -ModuleName cPSDesiredStateConfiguration
+  #Import-DscResource -ModuleName cPSDesiredStateConfiguration
+  Import-DscResource -ModuleName PSDesiredStateConfiguration
 
   node localhost {
     $roles = $OctopusParameters['Octopus.Machine.Roles'] -split ','
@@ -129,92 +130,6 @@ configuration DemoConfiguration {
       ValueData = '1'
       ValueType = 'Dword'
     }
-    Registry IoPageLockLimit
-    {
-      Ensure = 'Present'
-      Key = 'HKLM:\SYSTEM\CurrentControlSet\Control\Session Manager\Memory Management'
-      ValueName = 'IoPageLockLimit'
-      Force = $true
-      ValueData = '10000'
-      ValueType = 'Dword'
-    }
-    Registry LargeSystemCache
-    {
-      Ensure = 'Present'
-      Key = 'HKLM:\SYSTEM\CurrentControlSet\Control\Session Manager\Memory Management'
-      ValueName = 'LargeSystemCache'
-      Force = $true
-      ValueData = '0'
-      ValueType = 'Dword'
-    }
-    Registry MaxWorkItems
-    {
-      Ensure = 'Present'
-      Key = 'HKLM:\System\CurrentControlSet\Services\LanmanServer\Parameters'
-      ValueName = 'MaxWorkItems'
-      Force = $true
-      ValueData = '512'
-      ValueType = 'Dword'
-    }
-    Registry  MaxMpxCt
-    {
-      #Server Service Optimization
-      Ensure = 'Present'
-      Key = 'HKLM:\System\CurrentControlSet\Services\LanmanServer\Parameters'
-      ValueName = ' MaxMpxCt'
-      Force = $true
-      ValueData = '2048'
-      ValueType = 'Dword'
-    }
-    Registry MaxFreeConnections
-    {
-      #Server Service Optimization
-      Ensure = 'Present'
-      Key = 'HKLM:\System\CurrentControlSet\Services\LanmanServer\Parameters'
-      ValueName = 'MaxFreeConnections'
-      Force = $true
-      ValueData = '100'
-      ValueType = 'Dword'
-    }
-    Registry MinFreeConnections
-    {
-      #Server Service Optimization
-      Ensure = 'Present'
-      Key = 'HKLM:\System\CurrentControlSet\Services\LanmanServer\Parameters'
-      ValueName = 'MinFreeConnections'
-      Force = $true
-      ValueData = '32'
-      ValueType = 'Dword'
-    }
-    Registry EnableOplocks
-    {
-      #Disables Opportunistic Locking
-      Ensure = 'Present'
-      Key = 'HKLM:\System\CurrentControlSet\Services\LanmanServer\Parameters'
-      ValueName = 'EnableOplocks'
-      Force = $true
-      ValueData = '0'
-      ValueType = 'Dword'
-    }
-    Registry Size
-    {
-      Ensure = 'Present'
-      Key = 'HKLM:\System\CurrentControlSet\Services\LanmanServer\Parameters'
-      ValueName = 'Size'
-      Force = $true
-      ValueData = '3'
-      ValueType = 'Dword'
-    }
-    Registry UtilizeNTCaching
-    {
-      #Disable Caching
-      Ensure = 'Present'
-      Key = 'HKLM:\System\CurrentControlSet\Services\LanmanWorkstation\Parameters'
-      ValueName = 'UtilizeNTCaching'
-      Force = $true
-      ValueData = '0'
-      ValueType = 'Dword'
-    }
     Registry UseOpportunisticLocking
     {
       #Disables Opportunistic Locking
@@ -287,6 +202,7 @@ configuration DemoConfiguration {
     {
       Ensure = 'Absent'
       Key = 'HKLM:\SYSTEM\CurrentControlSet\Services\RemoteAccess\Performance'
+      ValueName = ''
       Force = $true
     }
 
