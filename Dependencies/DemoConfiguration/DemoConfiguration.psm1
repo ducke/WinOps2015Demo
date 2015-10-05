@@ -18,7 +18,7 @@ configuration DemoConfiguration {
         Name = 'AS-Net-Framework'
         Ensure = 'Present'
       }
-#>
+
       WindowsFeature RDSRDServer
       {
       Name = 'RDS-RD-Server'
@@ -43,7 +43,7 @@ configuration DemoConfiguration {
       Name = 'Server-Media-Foundation' 
       Ensure = 'Present'
       }
-
+#>
       Registry CryptoSignMenu
       {
         #http://support.microsoft.com/kb/829700/EN-US
