@@ -4,8 +4,8 @@ configuration DemoConfiguration {
     [System.Collections.IDictionary] $OctopusParameters
   )
 
-  #Import-DscResource -ModuleName cPSDesiredStateConfiguration
-  Import-DscResource -ModuleName PSDesiredStateConfiguration
+  Import-DscResource -ModuleName cPSDesiredStateConfiguration
+  #Import-DscResource -ModuleName PSDesiredStateConfiguration
 
   node localhost {
     $roles = $OctopusParameters['Octopus.Machine.Roles'] -split ','
