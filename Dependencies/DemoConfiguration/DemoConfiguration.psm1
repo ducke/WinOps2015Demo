@@ -13,12 +13,12 @@ configuration DemoConfiguration {
     write $roles
 
     if ($roles -contains 'XenAppSessionHost') {
-      WindowsFeature AspNetFramework
+<#      WindowsFeature AspNetFramework
       {
         Name = 'AS-Net-Framework'
         Ensure = 'Present'
       }
-
+#>
       WindowsFeature RDSRDServer
       {
       Name = 'RDS-RD-Server'
@@ -27,7 +27,8 @@ configuration DemoConfiguration {
 
       WindowsFeature IHInkSupport
       {
-      Name = 'IH-Ink-Support' 
+      #IH-Ink-Support
+      Name = 'InkAndHandwritingServices' 
       Ensure = 'Present'
       }
 
