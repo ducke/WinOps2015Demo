@@ -404,7 +404,7 @@ configuration DemoConfiguration {
       StartupType = 'Disabled'
       State = 'Stopped'
     }
-
+    }
 
     if ($roles -contains 'Database') {
       File dbFlag
