@@ -231,27 +231,9 @@ configuration DemoConfiguration {
 	      StartupType = 'Disabled'
 	      State = 'Stopped'
       }
-      Service HomeGroupListener
-      {
-	      Name = 'HomeGroupListener'
-	      StartupType = 'Disabled'
-	      State = 'Stopped'
-      }
-      Service HomeGroupProvider
-      {
-	      Name = 'HomeGroupProvider'
-	      StartupType = 'Disabled'
-	      State = 'Stopped'
-      }
       Service CscService
       {
 	      Name = 'CscService'
-	      StartupType = 'Disabled'
-	      State = 'Stopped'
-      }
-      Service wscsvc
-      {
-	      Name = 'wscsvc'
 	      StartupType = 'Disabled'
 	      State = 'Stopped'
       }
@@ -261,63 +243,9 @@ configuration DemoConfiguration {
 	      StartupType = 'Disabled'
 	      State = 'Stopped'
       }
-      Service sr
-      {
-	      Name = 'sr'
-	      StartupType = 'Disabled'
-	      State = 'Stopped'
-      }
-      Service srservice
-      {
-	      Name = 'srservice'
-	      StartupType = 'Disabled'
-	      State = 'Stopped'
-      }
-      Service WinDefend
-      {
-	      Name = 'WinDefend'
-	      StartupType = 'Disabled'
-	      State = 'Stopped'
-      }
-      Service WMPNetworkSvc
-      {
-	      Name = 'WMPNetworkSvc'
-	      StartupType = 'Disabled'
-	      State = 'Stopped'
-      }
-      Service SensrSvc
-      {
-	      Name = 'SensrSvc'
-	      StartupType = 'Disabled'
-	      State = 'Stopped'
-      }
       Service ALG
       {
 	      Name = 'ALG'
-	      StartupType = 'Disabled'
-	      State = 'Stopped'
-      }
-      Service BDESVC
-      {
-	      Name = 'BDESVC'
-	      StartupType = 'Disabled'
-	      State = 'Stopped'
-      }
-      Service wbengine
-      {
-	      Name = 'wbengine'
-	      StartupType = 'Disabled'
-	      State = 'Stopped'
-      }
-      Service bthserv
-      {
-	      Name = 'bthserv'
-	      StartupType = 'Disabled'
-	      State = 'Stopped'
-      }
-      Service PeerDistSvc
-      {
-	      Name = 'PeerDistSvc'
 	      StartupType = 'Disabled'
 	      State = 'Stopped'
       }
@@ -369,18 +297,6 @@ configuration DemoConfiguration {
 	      StartupType = 'Disabled'
 	      State = 'Stopped'
       }
-      Service WPCSvc
-      {
-	      Name = 'WPCSvc'
-	      StartupType = 'Disabled'
-	      State = 'Stopped'
-      }
-      Service SstpSvc
-      {
-	      Name = 'SstpSvc'
-	      StartupType = 'Disabled'
-	      State = 'Stopped'
-      }
       Service ShellHWDetection
       {
 	      Name = 'ShellHWDetection'
@@ -411,27 +327,9 @@ configuration DemoConfiguration {
 	      StartupType = 'Disabled'
 	      State = 'Stopped'
       }
-      Service TBS
-      {
-	      Name = 'TBS'
-	      StartupType = 'Disabled'
-	      State = 'Stopped'
-      }
       Service upnphost
       {
 	      Name = 'upnphost'
-	      StartupType = 'Disabled'
-	      State = 'Stopped'
-      }
-      Service SDRSVC
-      {
-	      Name = 'SDRSVC'
-	      StartupType = 'Disabled'
-	      State = 'Stopped'
-      }
-      Service idsvc
-      {
-	      Name = 'idsvc'
 	      StartupType = 'Disabled'
 	      State = 'Stopped'
       }
@@ -441,57 +339,15 @@ configuration DemoConfiguration {
 	      StartupType = 'Disabled'
 	      State = 'Stopped'
       }
-      Service wcncsvc
-      {
-	      Name = 'wcncsvc'
-	      StartupType = 'Disabled'
-	      State = 'Stopped'
-      }
       Service WerSvc
       {
 	      Name = 'WerSvc'
 	      StartupType = 'Disabled'
 	      State = 'Stopped'
       }
-      Service ehRecvr
-      {
-	      Name = 'ehRecvr'
-	      StartupType = 'Disabled'
-	      State = 'Stopped'
-      }
-      Service ehSched
-      {
-	      Name = 'ehSched'
-	      StartupType = 'Disabled'
-	      State = 'Stopped'
-      }
       Service WSearch
       {
 	      Name = 'WSearch'
-	      StartupType = 'Disabled'
-	      State = 'Stopped'
-      }
-      Service WZCSVC
-      {
-	      Name = 'WZCSVC'
-	      StartupType = 'Disabled'
-	      State = 'Stopped'
-      }
-      Service Wlansvc
-      {
-	      Name = 'Wlansvc'
-	      StartupType = 'Disabled'
-	      State = 'Stopped'
-      }
-      Service WwanSvc
-      {
-	      Name = 'WwanSvc'
-	      StartupType = 'Disabled'
-	      State = 'Stopped'
-      }
-      Service CiSvc
-      {
-	      Name = 'CiSvc'
 	      StartupType = 'Disabled'
 	      State = 'Stopped'
       }
