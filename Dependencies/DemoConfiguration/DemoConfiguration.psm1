@@ -13,7 +13,8 @@ configuration DemoConfiguration {
     write $roles
 
     if ($roles -contains 'XenAppSessionHost') {
-<#      WindowsFeature AspNetFramework
+#region WindowsFeature
+      WindowsFeature AspNetFramework
       {
         Name = 'AS-Net-Framework'
         Ensure = 'Present'
@@ -43,7 +44,8 @@ configuration DemoConfiguration {
       Name = 'Server-Media-Foundation' 
       Ensure = 'Present'
       }
-#>
+#endregion
+#region Registry
 <#      Registry CryptoSignMenu
       {
         #http://support.microsoft.com/kb/829700/EN-US
@@ -207,6 +209,8 @@ configuration DemoConfiguration {
         ValueName = ''
         Force = $true
       }
+#endregion
+#region Services
       Service BITS
       {
 	      Name = 'BITS'
@@ -489,6 +493,7 @@ configuration DemoConfiguration {
 	      StartupType = 'Disabled'
 	      State = 'Stopped'
       }
+#endregion
     }
 
     if ($roles -contains 'Database') {
