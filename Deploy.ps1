@@ -31,7 +31,7 @@ end
         Import-Module $PSScriptRoot\DemoConfiguration -ErrorAction Stop
 
         $null = DemoConfiguration -OctopusParameters $OctopusParameters -OutputPath $env:temp\MOF -ConfigurationData $configData -ErrorAction Stop
-        #Start-DscConfiguration -Path $env:temp\MOF -Force -Wait -Verbose -ErrorAction Stop
+        Start-DscConfiguration -Path $env:temp\MOF -Force -Wait -Verbose -ErrorAction Stop
     }
     catch
     {

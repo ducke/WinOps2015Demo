@@ -44,7 +44,7 @@ configuration DemoConfiguration {
       Ensure = 'Present'
       }
 #>
-      Registry CryptoSignMenu
+<#      Registry CryptoSignMenu
       {
         #http://support.microsoft.com/kb/829700/EN-US
         Ensure = 'Present'
@@ -73,6 +73,7 @@ configuration DemoConfiguration {
         ValueData = '65536'
         ValueType = 'Dword'
       }
+#>
       Registry KB834350_InfoCacheLevel
       {
         #http://support.microsoft.com/kb/834350/en-us
