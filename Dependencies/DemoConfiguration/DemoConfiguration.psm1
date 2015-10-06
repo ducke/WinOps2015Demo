@@ -345,12 +345,6 @@ configuration DemoConfiguration {
 	      StartupType = 'Disabled'
 	      State = 'Stopped'
       }
-      Service WSearch
-      {
-	      Name = 'WSearch'
-	      StartupType = 'Disabled'
-	      State = 'Stopped'
-      }
 #endregion
     }
 
