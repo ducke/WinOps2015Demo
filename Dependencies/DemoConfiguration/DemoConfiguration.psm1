@@ -217,12 +217,14 @@ configuration DemoConfiguration {
 	      StartupType = 'Disabled'
 	      State = 'Stopped'
       }
+<# GIbt es bei Windows 2012 r2 nicht
       Service UxSms
       {
 	      Name = 'UxSms'
 	      StartupType = 'Disabled'
 	      State = 'Stopped'
       }
+#>
       Service FDResPub
       {
 	      Name = 'FDResPub'
