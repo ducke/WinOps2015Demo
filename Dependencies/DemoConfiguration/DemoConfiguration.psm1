@@ -74,254 +74,421 @@ configuration DemoConfiguration {
         ValueType = 'Dword'
       }
 #>
-      Registry KB834350_InfoCacheLevel
+        Registry KB834350_InfoCacheLevel
+        {
+          #http://support.microsoft.com/kb/834350/en-us
+          Ensure = 'Present'
+          Key = 'HKLM:\System\CurrentControlSet\Services\MRXSmb\Parameters'
+          ValueName = 'InfoCacheLevel'
+          Force = $true
+          ValueData = '16'
+          ValueType = 'Dword'
+      }
+      Registry KB296264_OplocksDisabled
       {
-        #http://support.microsoft.com/kb/834350/en-us
+        #http://support.microsoft.com/kb/296264/en-us
         Ensure = 'Present'
         Key = 'HKLM:\System\CurrentControlSet\Services\MRXSmb\Parameters'
-        ValueName = 'InfoCacheLevel'
+        ValueName = 'OplocksDisabled'
         Force = $true
-        ValueData = '16'
+        ValueData = '1'
         ValueType = 'Dword'
-    }
-    Registry KB296264_OplocksDisabled
-    {
-      #http://support.microsoft.com/kb/296264/en-us
-      Ensure = 'Present'
-      Key = 'HKLM:\System\CurrentControlSet\Services\MRXSmb\Parameters'
-      ValueName = 'OplocksDisabled'
-      Force = $true
-      ValueData = '1'
-      ValueType = 'Dword'
-    }
-    Registry KB306850_SafeDllSearchMode
-    {
-      #http://support.microsoft.com/kb/306850/EN-US
-      Ensure = 'Present'
-      Key = 'HKLM:\SYSTEM\CurrentControlSet\Control\Session Manager'
-      ValueName = 'SafeDllSearchMode'
-      Force = $true
-      ValueData = '1'
-      ValueType = 'Dword'
-    }
-    Registry KB905890_SafeProcessSearchMode
-    {
-      #http://support.microsoft.com/kb/905890/en-us
-      Ensure = 'Present'
-      Key = 'HKLM:\SYSTEM\CurrentControlSet\Control\Session Manager'
-      ValueName = 'SafeProcessSearchMode'
-      Force = $true
-      ValueData = '1'
-      ValueType = 'Dword'
-    }
-    Registry RegistryLazyFlushInterval
-    {
-      Ensure = 'Present'
-      Key = 'HKLM:\SYSTEM\CurrentControlSet\Control\Session Manager'
-      ValueName = 'RegistryLazyFlushInterval'
-      Force = $true
-      ValueData = '30'
-      ValueType = 'Dword'
-    }
-    Registry DisablePagingExecutive
-    {
-      Ensure = 'Present'
-      Key = 'HKLM:\SYSTEM\CurrentControlSet\Control\Session Manager\Memory Management'
-      ValueName = 'DisablePagingExecutive'
-      Force = $true
-      ValueData = '1'
-      ValueType = 'Dword'
-    }
-    Registry UseOpportunisticLocking
-    {
-      #Disables Opportunistic Locking
-      Ensure = 'Present'
-      Key = 'HKLM:\SYSTEM\CurrentControlSet\Services\Lanmanworkstation\Parameters'
-      ValueName = 'UseOpportunisticLocking'
-      Force = $true
-      ValueData = '0'
-      ValueType = 'Dword'
-    }
-    Registry MaxCmds
-    {
-      Ensure = 'Present'
-      Key = 'HKLM:\SYSTEM\CurrentControlSet\Services\Lanmanworkstation\Parameters'
-      ValueName = 'MaxCmds'
-      Force = $true
-      ValueData = '800'
-      ValueType = 'Dword'
-    }
-    Registry MaxThreads
-    {
-      Ensure = 'Present'
-      Key = 'HKLM:\SYSTEM\CurrentControlSet\Services\Lanmanworkstation\Parameters'
-      ValueName = 'MaxThreads'
-      Force = $true
-      ValueData = '11'
-      ValueType = 'Dword'
-    }
-    Registry KeepAliveTime
-    {
-      #Determines how often TCP sends keep-alive transmissions
-      #http://technet.microsoft.com/en-us/library/cc957549.aspx
-      Ensure = 'Present'
-      Key = 'HKLM:\SYSTEM\CurrentControlSet\Services\Tcpip\parameters'
-      ValueName = 'KeepAliveTime'
-      Force = $true
-      ValueData = '180000'
-      ValueType = 'Dword'
-    }
-    Registry KeepAliveInterval
-    {
-      #Determines how often TCP repeats keep-alive transmissions when no response is received
-      #http://technet.microsoft.com/en-us/library/cc957548.aspx
-      Ensure = 'Present'
-      Key = 'HKLM:\SYSTEM\CurrentControlSet\Services\Tcpip\parameters'
-      ValueName = 'KeepAliveInterval'
-      Force = $true
-      ValueData = '100'
-      ValueType = 'Dword'
-    }
-    Registry TcpMaxDataRetransmissions
-    {
-      #Determines how many times TCP retransmits an unacknowledged data segment on an existing connection
-      #http://technet.microsoft.com/en-us/library/cc938210.aspx
-      Ensure = 'Present'
-      Key = 'HKLM:\SYSTEM\CurrentControlSet\Services\Tcpip\parameters'
-      ValueName = 'TcpMaxDataRetransmissions'
-      Force = $true
-      ValueData = '10'
-      ValueType = 'Dword'
-    }
-    Registry DeletePosix
-    {
-      Ensure = 'Absent'
-      Key = 'HKLM:\SYSTEM\CurrentControlSet\Control\Session Manager\SubSystems'
-      ValueName = 'Posix'
-      Force = $true
-    }
-    Registry DeleteRemoteAccessPerf
-    {
-      Ensure = 'Absent'
-      Key = 'HKLM:\SYSTEM\CurrentControlSet\Services\RemoteAccess\Performance'
-      ValueName = ''
-      Force = $true
-    }
-
-    Service MSDTC
-    {
-      Name = 'MSDTC'
-      StartupType = 'Automatic'
-      State = 'Stopped'
-    }
-    Service HidServ
-    {
-      Name = 'HidServ'
-      StartupType = 'Disabled'
-      State = 'Stopped'
-    }
-    Service ALG
-    {
-      Name = 'ALG'
-      StartupType = 'Disabled'
-      State = 'Stopped'
-    }
-    Service sacsvr
-    {
-      Name = 'sacsvr'
-      StartupType = 'Disabled'
-      State = 'Stopped'
-    }
-    Service swprv
-    {
-      Name = 'swprv'
-      StartupType = 'Disabled'
-      State = 'Stopped'
-    }
-    Service RasMan
-    {
-      Name = 'RasMan'
-      StartupType = 'Disabled'
-      State = 'Stopped'
-    }
-    Service RemoteAccess
-    {
-      Name = 'RemoteAccess'
-      StartupType = 'Disabled'
-      State = 'Stopped'
-    }
-    Service Rpclocator
-    {
-      Name = 'Rpclocator'
-      StartupType = 'Disabled'
-      State = 'Stopped'
-    }
-    Service ShellHWDetection
-    {
-      Name = 'ShellHWDetection'
-      StartupType = 'Disabled'
-      State = 'Stopped'
-    }
-    Service SCardSvr
-    {
-      Name = 'SCardSvr'
-      StartupType = 'Disabled'
-      State = 'Stopped'
-    }
-    Service TapiSrv
-    {
-      Name = 'TapiSrv'
-      StartupType = 'Disabled'
-      State = 'Stopped'
-    }
-    Service TrkWks
-    {
-      Name = 'TrkWks'
-      StartupType = 'Disabled'
-      State = 'Stopped'
-    }
-    Service RasAuto
-    {
-      Name = 'RasAuto'
-      StartupType = 'Disabled'
-      State = 'Stopped'
-    }
-    Service VSS
-    {
-      Name = 'VSS'
-      StartupType = 'Disabled'
-      State = 'Stopped'
-    }
-    Service WebClient
-    {
-      Name = 'WebClient'
-      StartupType = 'Disabled'
-      State = 'Stopped'
-    }
-    Service AudioSrv
-    {
-      Name = 'AudioSrv'
-      StartupType = 'Disabled'
-      State = 'Stopped'
-    }
-    Service stisvc
-    {
-      Name = 'stisvc'
-      StartupType = 'Disabled'
-      State = 'Stopped'
-    }
-    Service SharedAccess
-    {
-      Name = 'SharedAccess'
-      StartupType = 'Disabled'
-      State = 'Stopped'
-    }
-    Service WinHttpAutoProxySvc
-    {
-      Name = 'WinHttpAutoProxySvc'
-      StartupType = 'Disabled'
-      State = 'Stopped'
-    }
+      }
+      Registry KB306850_SafeDllSearchMode
+      {
+        #http://support.microsoft.com/kb/306850/EN-US
+        Ensure = 'Present'
+        Key = 'HKLM:\SYSTEM\CurrentControlSet\Control\Session Manager'
+        ValueName = 'SafeDllSearchMode'
+        Force = $true
+        ValueData = '1'
+        ValueType = 'Dword'
+      }
+      Registry KB905890_SafeProcessSearchMode
+      {
+        #http://support.microsoft.com/kb/905890/en-us
+        Ensure = 'Present'
+        Key = 'HKLM:\SYSTEM\CurrentControlSet\Control\Session Manager'
+        ValueName = 'SafeProcessSearchMode'
+        Force = $true
+        ValueData = '1'
+        ValueType = 'Dword'
+      }
+      Registry RegistryLazyFlushInterval
+      {
+        Ensure = 'Present'
+        Key = 'HKLM:\SYSTEM\CurrentControlSet\Control\Session Manager'
+        ValueName = 'RegistryLazyFlushInterval'
+        Force = $true
+        ValueData = '30'
+        ValueType = 'Dword'
+      }
+      Registry DisablePagingExecutive
+      {
+        Ensure = 'Present'
+        Key = 'HKLM:\SYSTEM\CurrentControlSet\Control\Session Manager\Memory Management'
+        ValueName = 'DisablePagingExecutive'
+        Force = $true
+        ValueData = '1'
+        ValueType = 'Dword'
+      }
+      Registry UseOpportunisticLocking
+      {
+        #Disables Opportunistic Locking
+        Ensure = 'Present'
+        Key = 'HKLM:\SYSTEM\CurrentControlSet\Services\Lanmanworkstation\Parameters'
+        ValueName = 'UseOpportunisticLocking'
+        Force = $true
+        ValueData = '0'
+        ValueType = 'Dword'
+      }
+      Registry MaxCmds
+      {
+        Ensure = 'Present'
+        Key = 'HKLM:\SYSTEM\CurrentControlSet\Services\Lanmanworkstation\Parameters'
+        ValueName = 'MaxCmds'
+        Force = $true
+        ValueData = '800'
+        ValueType = 'Dword'
+      }
+      Registry MaxThreads
+      {
+        Ensure = 'Present'
+        Key = 'HKLM:\SYSTEM\CurrentControlSet\Services\Lanmanworkstation\Parameters'
+        ValueName = 'MaxThreads'
+        Force = $true
+        ValueData = '11'
+        ValueType = 'Dword'
+      }
+      Registry KeepAliveTime
+      {
+        #Determines how often TCP sends keep-alive transmissions
+        #http://technet.microsoft.com/en-us/library/cc957549.aspx
+        Ensure = 'Present'
+        Key = 'HKLM:\SYSTEM\CurrentControlSet\Services\Tcpip\parameters'
+        ValueName = 'KeepAliveTime'
+        Force = $true
+        ValueData = '180000'
+        ValueType = 'Dword'
+      }
+      Registry KeepAliveInterval
+      {
+        #Determines how often TCP repeats keep-alive transmissions when no response is received
+        #http://technet.microsoft.com/en-us/library/cc957548.aspx
+        Ensure = 'Present'
+        Key = 'HKLM:\SYSTEM\CurrentControlSet\Services\Tcpip\parameters'
+        ValueName = 'KeepAliveInterval'
+        Force = $true
+        ValueData = '100'
+        ValueType = 'Dword'
+      }
+      Registry TcpMaxDataRetransmissions
+      {
+        #Determines how many times TCP retransmits an unacknowledged data segment on an existing connection
+        #http://technet.microsoft.com/en-us/library/cc938210.aspx
+        Ensure = 'Present'
+        Key = 'HKLM:\SYSTEM\CurrentControlSet\Services\Tcpip\parameters'
+        ValueName = 'TcpMaxDataRetransmissions'
+        Force = $true
+        ValueData = '10'
+        ValueType = 'Dword'
+      }
+      Registry DeletePosix
+      {
+        Ensure = 'Absent'
+        Key = 'HKLM:\SYSTEM\CurrentControlSet\Control\Session Manager\SubSystems'
+        ValueName = 'Posix'
+        Force = $true
+      }
+      Registry DeleteRemoteAccessPerf
+      {
+        Ensure = 'Absent'
+        Key = 'HKLM:\SYSTEM\CurrentControlSet\Services\RemoteAccess\Performance'
+        ValueName = ''
+        Force = $true
+      }
+      Service BITS
+      {
+	      Name = 'BITS'
+	      StartupType = 'Disabled'
+	      State = 'Stopped'
+      }
+      Service UxSms
+      {
+	      Name = 'UxSms'
+	      StartupType = 'Disabled'
+	      State = 'Stopped'
+      }
+      Service FDResPub
+      {
+	      Name = 'FDResPub'
+	      StartupType = 'Disabled'
+	      State = 'Stopped'
+      }
+      Service HomeGroupListener
+      {
+	      Name = 'HomeGroupListener'
+	      StartupType = 'Disabled'
+	      State = 'Stopped'
+      }
+      Service HomeGroupProvider
+      {
+	      Name = 'HomeGroupProvider'
+	      StartupType = 'Disabled'
+	      State = 'Stopped'
+      }
+      Service CscService
+      {
+	      Name = 'CscService'
+	      StartupType = 'Disabled'
+	      State = 'Stopped'
+      }
+      Service wscsvc
+      {
+	      Name = 'wscsvc'
+	      StartupType = 'Disabled'
+	      State = 'Stopped'
+      }
+      Service SysMain
+      {
+	      Name = 'SysMain'
+	      StartupType = 'Disabled'
+	      State = 'Stopped'
+      }
+      Service sr
+      {
+	      Name = 'sr'
+	      StartupType = 'Disabled'
+	      State = 'Stopped'
+      }
+      Service srservice
+      {
+	      Name = 'srservice'
+	      StartupType = 'Disabled'
+	      State = 'Stopped'
+      }
+      Service WinDefend
+      {
+	      Name = 'WinDefend'
+	      StartupType = 'Disabled'
+	      State = 'Stopped'
+      }
+      Service WMPNetworkSvc
+      {
+	      Name = 'WMPNetworkSvc'
+	      StartupType = 'Disabled'
+	      State = 'Stopped'
+      }
+      Service SensrSvc
+      {
+	      Name = 'SensrSvc'
+	      StartupType = 'Disabled'
+	      State = 'Stopped'
+      }
+      Service ALG
+      {
+	      Name = 'ALG'
+	      StartupType = 'Disabled'
+	      State = 'Stopped'
+      }
+      Service BDESVC
+      {
+	      Name = 'BDESVC'
+	      StartupType = 'Disabled'
+	      State = 'Stopped'
+      }
+      Service wbengine
+      {
+	      Name = 'wbengine'
+	      StartupType = 'Disabled'
+	      State = 'Stopped'
+      }
+      Service bthserv
+      {
+	      Name = 'bthserv'
+	      StartupType = 'Disabled'
+	      State = 'Stopped'
+      }
+      Service PeerDistSvc
+      {
+	      Name = 'PeerDistSvc'
+	      StartupType = 'Disabled'
+	      State = 'Stopped'
+      }
+      Service Browser
+      {
+	      Name = 'Browser'
+	      StartupType = 'Disabled'
+	      State = 'Stopped'
+      }
+      Service DPS
+      {
+	      Name = 'DPS'
+	      StartupType = 'Disabled'
+	      State = 'Stopped'
+      }
+      Service defragsvc
+      {
+	      Name = 'defragsvc'
+	      StartupType = 'Disabled'
+	      State = 'Stopped'
+      }
+      Service TrkWks
+      {
+	      Name = 'TrkWks'
+	      StartupType = 'Disabled'
+	      State = 'Stopped'
+      }
+      Service EFS
+      {
+	      Name = 'EFS'
+	      StartupType = 'Disabled'
+	      State = 'Stopped'
+      }
+      Service fdPHost
+      {
+	      Name = 'fdPHost'
+	      StartupType = 'Disabled'
+	      State = 'Stopped'
+      }
+      Service msiscsi
+      {
+	      Name = 'msiscsi'
+	      StartupType = 'Disabled'
+	      State = 'Stopped'
+      }
+      Service swprv
+      {
+	      Name = 'swprv'
+	      StartupType = 'Disabled'
+	      State = 'Stopped'
+      }
+      Service WPCSvc
+      {
+	      Name = 'WPCSvc'
+	      StartupType = 'Disabled'
+	      State = 'Stopped'
+      }
+      Service SstpSvc
+      {
+	      Name = 'SstpSvc'
+	      StartupType = 'Disabled'
+	      State = 'Stopped'
+      }
+      Service ShellHWDetection
+      {
+	      Name = 'ShellHWDetection'
+	      StartupType = 'Disabled'
+	      State = 'Stopped'
+      }
+      Service SNMPTRAP
+      {
+	      Name = 'SNMPTRAP'
+	      StartupType = 'Disabled'
+	      State = 'Stopped'
+      }
+      Service SSDPSRV
+      {
+	      Name = 'SSDPSRV'
+	      StartupType = 'Disabled'
+	      State = 'Stopped'
+      }
+      Service TabletInputService
+      {
+	      Name = 'TabletInputService'
+	      StartupType = 'Disabled'
+	      State = 'Stopped'
+      }
+      Service TapiSrv
+      {
+	      Name = 'TapiSrv'
+	      StartupType = 'Disabled'
+	      State = 'Stopped'
+      }
+      Service TBS
+      {
+	      Name = 'TBS'
+	      StartupType = 'Disabled'
+	      State = 'Stopped'
+      }
+      Service upnphost
+      {
+	      Name = 'upnphost'
+	      StartupType = 'Disabled'
+	      State = 'Stopped'
+      }
+      Service SDRSVC
+      {
+	      Name = 'SDRSVC'
+	      StartupType = 'Disabled'
+	      State = 'Stopped'
+      }
+      Service idsvc
+      {
+	      Name = 'idsvc'
+	      StartupType = 'Disabled'
+	      State = 'Stopped'
+      }
+      Service WcsPlugInService
+      {
+	      Name = 'WcsPlugInService'
+	      StartupType = 'Disabled'
+	      State = 'Stopped'
+      }
+      Service wcncsvc
+      {
+	      Name = 'wcncsvc'
+	      StartupType = 'Disabled'
+	      State = 'Stopped'
+      }
+      Service WerSvc
+      {
+	      Name = 'WerSvc'
+	      StartupType = 'Disabled'
+	      State = 'Stopped'
+      }
+      Service ehRecvr
+      {
+	      Name = 'ehRecvr'
+	      StartupType = 'Disabled'
+	      State = 'Stopped'
+      }
+      Service ehSched
+      {
+	      Name = 'ehSched'
+	      StartupType = 'Disabled'
+	      State = 'Stopped'
+      }
+      Service WSearch
+      {
+	      Name = 'WSearch'
+	      StartupType = 'Disabled'
+	      State = 'Stopped'
+      }
+      Service WZCSVC
+      {
+	      Name = 'WZCSVC'
+	      StartupType = 'Disabled'
+	      State = 'Stopped'
+      }
+      Service Wlansvc
+      {
+	      Name = 'Wlansvc'
+	      StartupType = 'Disabled'
+	      State = 'Stopped'
+      }
+      Service WwanSvc
+      {
+	      Name = 'WwanSvc'
+	      StartupType = 'Disabled'
+	      State = 'Stopped'
+      }
+      Service CiSvc
+      {
+	      Name = 'CiSvc'
+	      StartupType = 'Disabled'
+	      State = 'Stopped'
+      }
     }
 
     if ($roles -contains 'Database') {
