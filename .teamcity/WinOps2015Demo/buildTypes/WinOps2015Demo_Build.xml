@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<build-type xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" uuid="6c65bfa1-6571-4255-b165-f02bac6968ec" xsi:noNamespaceSchemaLocation="http://www.jetbrains.com/teamcity/schemas/9.0/project-config.xsd">
+  <name>Build</name>
+  <description />
+  <settings>
+    <options>
+      <option name="buildNumberPattern" value="0.0.%build.counter%" />
+      <option name="cleanBuild" value="true" />
+      <option name="showDependenciesChanges" value="true" />
+    </options>
+    <disabled-settings>
+      <setting-ref ref="RUNNER_7" />
+    </disabled-settings>
+    <parameters />
+    <build-runners>
+      <runner id="RUNNER_6" name="" type="jetbrains_powershell">
+        <parameters>
+          <param name="jetbrains_powershell_bitness" value="x64" />
+          <param name="jetbrains_powershell_execution" value="PS1" />
+          <param name="jetbrains_powershell_scriptArguments" value="-OutputDirectory .\Output" />
+          <param name="jetbrains_powershell_script_file" value="Invoke-Build.ps1" />
+          <param name="jetbrains_powershell_script_mode" value="FILE" />
+          <param name="teamcity.step.mode" value="default" />
+        </parameters>
+      </runner>
+      <runner id="RUNNER_9" name="" type="jb.nuget.pack">
+        <parameters>
+          <param name="nuget.pack.as.artifact" value="true" />
+          <param name="nuget.pack.output.directory" value="/dist" />
+          <param name="nuget.pack.project.dir" value="as_is" />
+          <param name="nuget.pack.properties" value="Configuration=Release" />
+          <param name="nuget.pack.specFile" value="/output/DSC.Configuration.nuspec" />
+          <param name="nuget.pack.version" value="%build.number%" />
+          <param name="nuget.path" value="?NuGet.CommandLine.DEFAULT.nupkg" />
+          <param name="nugetCustomPath" value="?NuGet.CommandLine.DEFAULT.nupkg" />
+          <param name="nugetPathSelector" value="?NuGet.CommandLine.DEFAULT.nupkg" />
+          <param name="teamcity.step.mode" value="default" />
+        </parameters>
+      </runner>
+      <runner id="RUNNER_7" name="OctoRelease" type="octopus.create.release">
+        <parameters>
+          <param name="octopus_deployto" value="WITU" />
+          <param name="octopus_host" value="http://192.168.138.143/" />
+          <param name="octopus_project_name" value="DSC.Configuration" />
+          <param name="octopus_releasenumber" value="%build.number%" />
+          <param name="octopus_version" value="2.0+" />
+          <param name="secure:octopus_apikey" value="zxx2ca50dabb85c5f5451272e212ee731d1ac062ed21b88cf8d2c9b41a15835ae85" />
+          <param name="teamcity.step.mode" value="default" />
+        </parameters>
+      </runner>
+    </build-runners>
+    <vcs-settings>
+      <vcs-entry-ref root-id="WinOps2015Demo_HttpsGithubComDuckeWinOps2015DemoGitRefsHeadsMaster" />
+    </vcs-settings>
+    <requirements />
+    <build-triggers />
+    <cleanup />
+  </settings>
+</build-type>
+
