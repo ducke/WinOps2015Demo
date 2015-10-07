@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<build-type xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" uuid="99beca8a-c4aa-46bb-a788-5a62dddc9b39" xsi:noNamespaceSchemaLocation="http://www.jetbrains.com/teamcity/schemas/9.0/project-config.xsd">
+  <name>Release</name>
+  <description />
+  <settings>
+    <options>
+      <option name="buildNumberPattern" value="%dep.WinOps2015Demo_Build.build.number%" />
+    </options>
+    <parameters />
+    <build-runners>
+      <runner id="RUNNER_5" name="OctoRelease" type="octopus.create.release">
+        <parameters>
+          <param name="octopus_deployto" value="WITU" />
+          <param name="octopus_host" value="http://192.168.138.10/" />
+          <param name="octopus_project_name" value="DSC.Configuration" />
+          <param name="octopus_releasenumber" value="%build.number%" />
+          <param name="octopus_version" value="2.0+" />
+          <param name="secure:octopus_apikey" value="zxx2ca50dabb85c5f5451272e212ee731d1ac062ed21b88cf8d2c9b41a15835ae85" />
+          <param name="teamcity.step.mode" value="default" />
+        </parameters>
+      </runner>
+    </build-runners>
+    <vcs-settings>
+      <vcs-entry-ref root-id="WinOps2015Demo_HttpsGithubComDuckeWinOps2015DemoGitRefsHeadsMaster" />
+    </vcs-settings>
+    <requirements />
+    <build-triggers>
+      <build-trigger id="vcsTrigger" type="vcsTrigger">
+        <parameters>
+          <param name="quietPeriodMode" value="DO_NOT_USE" />
+        </parameters>
+      </build-trigger>
+    </build-triggers>
+    <artifact-dependencies>
+      <dependency sourceBuildTypeId="WinOps2015Demo_Build" cleanDestination="false">
+        <revisionRule name="sameChainOrLastFinished" revision="latest.sameChainOrLastFinished" />
+        <artifact sourcePath="*.nupkg" />
+      </dependency>
+    </artifact-dependencies>
+    <dependencies>
+      <depend-on sourceBuildTypeId="WinOps2015Demo_Build">
+        <options>
+          <option name="run-build-if-dependency-failed" value="RUN_ADD_PROBLEM" />
+          <option name="take-started-build-with-same-revisions" value="true" />
+          <option name="take-successful-builds-only" value="true" />
+        </options>
+      </depend-on>
+    </dependencies>
+    <cleanup />
+  </settings>
+</build-type>
+
