@@ -6,6 +6,7 @@ configuration DemoConfiguration {
 
   Import-DscResource -ModuleName cPSDesiredStateConfiguration
   Import-DscResource -ModuleName PSDesiredStateConfiguration
+  Import-DSCResource -ModuleName xSystemVirtualMemory
 
   node localhost {
     $roles = $OctopusParameters['Octopus.Machine.Roles'] -split ','
@@ -43,6 +44,72 @@ configuration DemoConfiguration {
       {
       Name = 'Server-Media-Foundation' 
       Ensure = 'Present'
+      }
+#endregion
+
+#region 
+
+
+      Registry Dump_AutoReboot
+      {
+        Ensure = 'Present'
+        Key = 'HKLM:\SYSTEM\CurrentControlSet\Control\CrashControl'
+        ValueName = 'AutoReboot'
+        Force = $true
+        ValueData = '1'
+        ValueType = 'Dword'
+      }
+      Registry Dump_Overwrite
+      {
+        Ensure = 'Present'
+        Key = 'HKLM:\SYSTEM\CurrentControlSet\Control\CrashControl'
+        ValueName = 'Overwrite'
+        Force = $true
+        ValueData = '1'
+        ValueType = 'Dword'
+      }
+      Registry Dump_SendAlert
+      {
+        Ensure = 'Present'
+        Key = 'HKLM:\SYSTEM\CurrentControlSet\Control\CrashControl'
+        ValueName = 'SendAlert'
+        Force = $true
+        ValueData = '0'
+        ValueType = 'Dword'
+      }
+      Registry Dump_LogEvent
+      {
+        Ensure = 'Present'
+        Key = 'HKLM:\SYSTEM\CurrentControlSet\Control\CrashControl'
+        ValueName = 'LogEvent'
+        Force = $true
+        ValueData = '1'
+        ValueType = 'Dword'
+      }
+      Registry Dump_MinidumpDir
+      {
+        Ensure = 'Present'
+        Key = 'HKLM:\SYSTEM\CurrentControlSet\Control\CrashControl'
+        ValueName = 'MinidumpDir'
+        Force = $true
+        ValueData = 'C:\'
+        ValueType = 'String'
+      }
+      Registry Dump_DumpFile
+      {
+        Ensure = 'Present'
+        Key = 'HKLM:\SYSTEM\CurrentControlSet\Control\CrashControl'
+        ValueName = 'DumpFile'
+        Force = $true
+        ValueData = 'C:\MEMORY.DMP'
+        ValueType = 'String'
+      }
+      xSystemVirtualMemory AdjustVirtualMemory
+      {
+          ConfigureOption = "CustomSize"
+          InitialSize = 1000
+          MaximumSize = 2000
+          DriveLetter = "C:"
       }
 #endregion
 #region Registry
