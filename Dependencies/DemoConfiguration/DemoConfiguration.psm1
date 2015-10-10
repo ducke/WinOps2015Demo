@@ -675,7 +675,7 @@ configuration DemoConfiguration {
         #Disable Disk Defragmenter Service
         Ensure = "Present"
         TaskName = "ScheduledDefrag"
-        TaskPath = "Microsoft\Windows\Defrag\"
+        TaskPath = "\Microsoft\Windows\Defrag\"
         Disable = $true
     }
     cScheduleTask MPIdleTask
@@ -683,7 +683,7 @@ configuration DemoConfiguration {
         #Disable Windows Defender Service
         Ensure = "Present"
         TaskName = "MPIdleTask"
-        TaskPath = "Microsoft\Windows Defender\"
+        TaskPath = "\Microsoft\Windows Defender\"
         Disable = $true
     }
     cScheduleTask MP_Scheduled_Scan
@@ -691,7 +691,7 @@ configuration DemoConfiguration {
         #Disable Windows Defender Service
         Ensure = "Present"
         TaskName = "MP Scheduled Scan"
-        TaskPath = "Microsoft\Windows Defender\"
+        TaskPath = "\Microsoft\Windows Defender\"
         Disable = $true
     }
     cScheduleTask SR
@@ -699,7 +699,7 @@ configuration DemoConfiguration {
         #Disable Windows System Restore
         Ensure = "Present"
         TaskName = "SR"
-        TaskPath = "Microsoft\Windows\SystemRestore\"
+        TaskPath = "\Microsoft\Windows\SystemRestore\"
         Disable = $true
     }
     cScheduleTask AitAgent
@@ -707,7 +707,7 @@ configuration DemoConfiguration {
         #
         Ensure = "Present"
         TaskName = "AitAgent"
-        TaskPath = "microsoft\windows\Application Experience\"
+        TaskPath = "\microsoft\windows\Application Experience\"
         Disable = $true
     }
     cScheduleTask ProgramDataUpdater
@@ -715,7 +715,7 @@ configuration DemoConfiguration {
         #
         Ensure = "Present"
         TaskName = "ProgramDataUpdater"
-        TaskPath = "microsoft\windows\Application Experience\"
+        TaskPath = "\microsoft\windows\Application Experience\"
         Disable = $true
     }
     cScheduleTask Proxy
@@ -723,7 +723,7 @@ configuration DemoConfiguration {
         #
         Ensure = "Present"
         TaskName = "Proxy"
-        TaskPath = "microsoft\windows\Autochk\"
+        TaskPath = "\microsoft\windows\Autochk\"
         Disable = $true
     }
     cScheduleTask Consolidator
@@ -731,7 +731,7 @@ configuration DemoConfiguration {
         #
         Ensure = "Present"
         TaskName = "Consolidator"
-        TaskPath = "microsoft\windows\Customer Experience Improvement Program\"
+        TaskPath = "\microsoft\windows\Customer Experience Improvement Program\"
         Disable = $true
     }
     cScheduleTask KernelCeipTask
@@ -739,7 +739,7 @@ configuration DemoConfiguration {
         #
         Ensure = "Present"
         TaskName = "KernelCeipTask"
-        TaskPath = "microsoft\windows\Customer Experience Improvement Program\"
+        TaskPath = "\microsoft\windows\Customer Experience Improvement Program\"
         Disable = $true
     }
     cScheduleTask UsbCeip
@@ -747,7 +747,7 @@ configuration DemoConfiguration {
         #
         Ensure = "Present"
         TaskName = "UsbCeip"
-        TaskPath = "microsoft\windows\Customer Experience Improvement Program\"
+        TaskPath = "\microsoft\windows\Customer Experience Improvement Program\"
         Disable = $true
     }
     cScheduleTask Scheduled
@@ -755,7 +755,7 @@ configuration DemoConfiguration {
         #
         Ensure = "Present"
         TaskName = "Scheduled"
-        TaskPath = "microsoft\windows\Diagnosis\"
+        TaskPath = "\microsoft\windows\Diagnosis\"
         Disable = $true
     }
     cScheduleTask Microsoft-Windows-DiskDiagnosticDataCollector
@@ -763,7 +763,7 @@ configuration DemoConfiguration {
         #
         Ensure = "Present"
         TaskName = "Microsoft-Windows-DiskDiagnosticDataCollector"
-        TaskPath = "microsoft\windows\DiskDiagnostic\"
+        TaskPath = "\microsoft\windows\DiskDiagnostic\"
         Disable = $true
     }
     cScheduleTask Microsoft-Windows-DiskDiagnosticResolver
@@ -771,7 +771,7 @@ configuration DemoConfiguration {
         #
         Ensure = "Present"
         TaskName = "Microsoft-Windows-DiskDiagnosticResolver"
-        TaskPath = "microsoft\windows\DiskDiagnostic\"
+        TaskPath = "\microsoft\windows\DiskDiagnostic\"
         Disable = $true
     }
     cScheduleTask WinSAT
@@ -779,7 +779,7 @@ configuration DemoConfiguration {
         #
         Ensure = "Present"
         TaskName = "WinSAT"
-        TaskPath = "microsoft\windows\Maintenance\"
+        TaskPath = "\microsoft\windows\Maintenance\"
         Disable = $true
     }
     cScheduleTask HotStart
@@ -787,7 +787,7 @@ configuration DemoConfiguration {
         #
         Ensure = "Present"
         TaskName = "HotStart"
-        TaskPath = "microsoft\windows\MobilePC\"
+        TaskPath = "\microsoft\windows\MobilePC\"
         Disable = $true
     }
     cScheduleTask AnalyzeSystem
@@ -795,7 +795,7 @@ configuration DemoConfiguration {
         #
         Ensure = "Present"
         TaskName = "AnalyzeSystem"
-        TaskPath = "microsoft\windows\Power Efficiency Diagnostics\"
+        TaskPath = "\microsoft\windows\Power Efficiency Diagnostics\"
         Disable = $true
     }
     cScheduleTask RacTask
@@ -803,7 +803,7 @@ configuration DemoConfiguration {
         #
         Ensure = "Present"
         TaskName = "RacTask"
-        TaskPath = "microsoft\windows\RAC\"
+        TaskPath = "\microsoft\windows\RAC\"
         Disable = $true
     }
     cScheduleTask MobilityManager
@@ -811,7 +811,7 @@ configuration DemoConfiguration {
         #
         Ensure = "Present"
         TaskName = "MobilityManager"
-        TaskPath = "microsoft\windows\Ras\"
+        TaskPath = "\microsoft\windows\Ras\"
         Disable = $true
     }
     cScheduleTask RegIdleBackup
@@ -819,7 +819,7 @@ configuration DemoConfiguration {
         #
         Ensure = "Present"
         TaskName = "RegIdleBackup"
-        TaskPath = "microsoft\windows\Registry\"
+        TaskPath = "\microsoft\windows\Registry\"
         Disable = $true
     }
     cScheduleTask AutoWake
@@ -827,7 +827,7 @@ configuration DemoConfiguration {
         #
         Ensure = "Present"
         TaskName = "AutoWake"
-        TaskPath = "microsoft\windows\SideShow\"
+        TaskPath = "\microsoft\windows\SideShow\"
         Disable = $true
     }
     cScheduleTask GadgetManager
@@ -835,7 +835,7 @@ configuration DemoConfiguration {
         #
         Ensure = "Present"
         TaskName = "GadgetManager"
-        TaskPath = "microsoft\windows\SideShow\"
+        TaskPath = "\microsoft\windows\SideShow\"
         Disable = $true
     }
     cScheduleTask SessionAgent
@@ -843,7 +843,7 @@ configuration DemoConfiguration {
         #
         Ensure = "Present"
         TaskName = "SessionAgent"
-        TaskPath = "microsoft\windows\SideShow\"
+        TaskPath = "\microsoft\windows\SideShow\"
         Disable = $true
     }
     cScheduleTask SystemDataProviders
@@ -851,7 +851,7 @@ configuration DemoConfiguration {
         #
         Ensure = "Present"
         TaskName = "SystemDataProviders"
-        TaskPath = "microsoft\windows\SideShow\"
+        TaskPath = "\microsoft\windows\SideShow\"
         Disable = $true
     }
     cScheduleTask ResolutionHost
@@ -859,7 +859,7 @@ configuration DemoConfiguration {
         #
         Ensure = "Present"
         TaskName = "ResolutionHost"
-        TaskPath = "microsoft\windows\WDI\"
+        TaskPath = "\microsoft\windows\WDI\"
         Disable = $true
     }
     cScheduleTask BfeOnServiceStartTypeChange
@@ -867,7 +867,7 @@ configuration DemoConfiguration {
         #
         Ensure = "Present"
         TaskName = "BfeOnServiceStartTypeChange"
-        TaskPath = "microsoft\windows\Windows Filtering Platform\"
+        TaskPath = "\microsoft\windows\Windows Filtering Platform\"
         Disable = $true
     }
     cScheduleTask UpdateLibrary
@@ -875,7 +875,7 @@ configuration DemoConfiguration {
         #
         Ensure = "Present"
         TaskName = "UpdateLibrary"
-        TaskPath = "microsoft\windows\Windows Media Sharing\"
+        TaskPath = "\microsoft\windows\Windows Media Sharing\"
         Disable = $true
     }
     cScheduleTask ConfigNotification
@@ -883,7 +883,7 @@ configuration DemoConfiguration {
         #
         Ensure = "Present"
         TaskName = "ConfigNotification"
-        TaskPath = "microsoft\windows\WindowsBackup\"
+        TaskPath = "\microsoft\windows\WindowsBackup\"
         Disable = $true
     }
     cScheduleTask Maintenance_Configurator
@@ -891,7 +891,7 @@ configuration DemoConfiguration {
         #http://www.petri.com/windows-server-2012-disable-automatic-maintenance-using-psexec.htm
         Ensure = "Present"
         TaskName = "Maintenance Configurator"
-        TaskPath = "Microsoft\Windows\TaskScheduler\"
+        TaskPath = "\Microsoft\Windows\TaskScheduler\"
         Disable = $true
     }
 #endregion
