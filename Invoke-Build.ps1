@@ -23,7 +23,7 @@ function Main
         Import-Module cDscResourceDesigner -ErrorAction Stop
 
         RunUnitTests -Path $resourcesPath
-        TestDscResources -Path $resourcesPath
+        #TestDscResources -Path $resourcesPath
         CompileTestMOFs
 
         $moduleDest = Join-Path $OutputDirectory Modules
