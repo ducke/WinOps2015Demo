@@ -7,6 +7,7 @@ configuration DemoConfiguration {
   Import-DscResource -ModuleName cPSDesiredStateConfiguration
   Import-DscResource -ModuleName PSDesiredStateConfiguration
   Import-DSCResource -ModuleName xSystemVirtualMemory
+  Import-DscResource -Modulename GraniResource
 
   node localhost {
     $roles = $OctopusParameters['Octopus.Machine.Roles'] -split ','
@@ -46,9 +47,7 @@ configuration DemoConfiguration {
       Ensure = 'Present'
       }
 #endregion
-
-#region 
-
+#region Pagefile
 
       Registry Dump_AutoReboot
       {
@@ -110,171 +109,6 @@ configuration DemoConfiguration {
           InitialSize = 1000
           MaximumSize = 2000
           DriveLetter = "C:"
-      }
-#endregion
-#region Registry
-<#      Registry CryptoSignMenu
-      {
-        #http://support.microsoft.com/kb/829700/EN-US
-        Ensure = 'Present'
-        Key = 'HKCR:\*\shellex\PropertySheetHandlers\CryptoSignMenu'
-        ValueName = 'SuppressionPolicy'
-        Force = $true
-        ValueData = '65536'
-        ValueType = 'Dword'
-      }
-      Registry KB829700_SuppressionPolicy
-      {
-        #http://support.microsoft.com/kb/829700/EN-US
-        Ensure = 'Present'
-        Key = 'HKCR:\*\shellex\PropertySheetHandlers\{3EA48300-8CF6-101B-84FB-666CCB9BCD32}'
-        ValueName = 'SuppressionPolicy'
-        Force = $true
-        ValueData = '65536'
-        ValueType = 'Dword'
-      }
-      Registry KB829700_SuppressionPolicy_2
-      {
-        Ensure = 'Present'
-        Key = 'HKCR:\*\shellex\PropertySheetHandlers\{883373C3-BF89-11D1-BE35-080036B11A03}'
-        ValueName = 'SuppressionPolicy'
-        Force = $true
-        ValueData = '65536'
-        ValueType = 'Dword'
-      }
-#>
-        Registry KB834350_InfoCacheLevel
-        {
-          #http://support.microsoft.com/kb/834350/en-us
-          Ensure = 'Present'
-          Key = 'HKLM:\System\CurrentControlSet\Services\MRXSmb\Parameters'
-          ValueName = 'InfoCacheLevel'
-          Force = $true
-          ValueData = '16'
-          ValueType = 'Dword'
-      }
-      Registry KB296264_OplocksDisabled
-      {
-        #http://support.microsoft.com/kb/296264/en-us
-        Ensure = 'Present'
-        Key = 'HKLM:\System\CurrentControlSet\Services\MRXSmb\Parameters'
-        ValueName = 'OplocksDisabled'
-        Force = $true
-        ValueData = '1'
-        ValueType = 'Dword'
-      }
-      Registry KB306850_SafeDllSearchMode
-      {
-        #http://support.microsoft.com/kb/306850/EN-US
-        Ensure = 'Present'
-        Key = 'HKLM:\SYSTEM\CurrentControlSet\Control\Session Manager'
-        ValueName = 'SafeDllSearchMode'
-        Force = $true
-        ValueData = '1'
-        ValueType = 'Dword'
-      }
-      Registry KB905890_SafeProcessSearchMode
-      {
-        #http://support.microsoft.com/kb/905890/en-us
-        Ensure = 'Present'
-        Key = 'HKLM:\SYSTEM\CurrentControlSet\Control\Session Manager'
-        ValueName = 'SafeProcessSearchMode'
-        Force = $true
-        ValueData = '1'
-        ValueType = 'Dword'
-      }
-      Registry RegistryLazyFlushInterval
-      {
-        Ensure = 'Present'
-        Key = 'HKLM:\SYSTEM\CurrentControlSet\Control\Session Manager'
-        ValueName = 'RegistryLazyFlushInterval'
-        Force = $true
-        ValueData = '30'
-        ValueType = 'Dword'
-      }
-      Registry DisablePagingExecutive
-      {
-        Ensure = 'Present'
-        Key = 'HKLM:\SYSTEM\CurrentControlSet\Control\Session Manager\Memory Management'
-        ValueName = 'DisablePagingExecutive'
-        Force = $true
-        ValueData = '1'
-        ValueType = 'Dword'
-      }
-      Registry UseOpportunisticLocking
-      {
-        #Disables Opportunistic Locking
-        Ensure = 'Present'
-        Key = 'HKLM:\SYSTEM\CurrentControlSet\Services\Lanmanworkstation\Parameters'
-        ValueName = 'UseOpportunisticLocking'
-        Force = $true
-        ValueData = '0'
-        ValueType = 'Dword'
-      }
-      Registry MaxCmds
-      {
-        Ensure = 'Present'
-        Key = 'HKLM:\SYSTEM\CurrentControlSet\Services\Lanmanworkstation\Parameters'
-        ValueName = 'MaxCmds'
-        Force = $true
-        ValueData = '800'
-        ValueType = 'Dword'
-      }
-      Registry MaxThreads
-      {
-        Ensure = 'Present'
-        Key = 'HKLM:\SYSTEM\CurrentControlSet\Services\Lanmanworkstation\Parameters'
-        ValueName = 'MaxThreads'
-        Force = $true
-        ValueData = '11'
-        ValueType = 'Dword'
-      }
-      Registry KeepAliveTime
-      {
-        #Determines how often TCP sends keep-alive transmissions
-        #http://technet.microsoft.com/en-us/library/cc957549.aspx
-        Ensure = 'Present'
-        Key = 'HKLM:\SYSTEM\CurrentControlSet\Services\Tcpip\parameters'
-        ValueName = 'KeepAliveTime'
-        Force = $true
-        ValueData = '180000'
-        ValueType = 'Dword'
-      }
-      Registry KeepAliveInterval
-      {
-        #Determines how often TCP repeats keep-alive transmissions when no response is received
-        #http://technet.microsoft.com/en-us/library/cc957548.aspx
-        Ensure = 'Present'
-        Key = 'HKLM:\SYSTEM\CurrentControlSet\Services\Tcpip\parameters'
-        ValueName = 'KeepAliveInterval'
-        Force = $true
-        ValueData = '100'
-        ValueType = 'Dword'
-      }
-      Registry TcpMaxDataRetransmissions
-      {
-        #Determines how many times TCP retransmits an unacknowledged data segment on an existing connection
-        #http://technet.microsoft.com/en-us/library/cc938210.aspx
-        Ensure = 'Present'
-        Key = 'HKLM:\SYSTEM\CurrentControlSet\Services\Tcpip\parameters'
-        ValueName = 'TcpMaxDataRetransmissions'
-        Force = $true
-        ValueData = '10'
-        ValueType = 'Dword'
-      }
-      Registry DeletePosix
-      {
-        Ensure = 'Absent'
-        Key = 'HKLM:\SYSTEM\CurrentControlSet\Control\Session Manager\SubSystems'
-        ValueName = 'Posix'
-        Force = $true
-      }
-      Registry DeleteRemoteAccessPerf
-      {
-        Ensure = 'Absent'
-        Key = 'HKLM:\SYSTEM\CurrentControlSet\Services\RemoteAccess\Performance'
-        ValueName = ''
-        Force = $true
       }
 #endregion
 #region Services
@@ -412,6 +246,654 @@ configuration DemoConfiguration {
 	      StartupType = 'Disabled'
 	      State = 'Stopped'
       }
+#endregion
+#region Customizing Registry
+      Registry fPromptForPassword
+      {
+        #Always prompt client for password upon connection
+        Ensure = 'Present'
+        Key = 'HKLM:\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\ICA-Tcp'
+        ValueName = 'fPromptForPassword'
+        Force = $true
+        ValueData = '0'
+        ValueType = 'DWORD'
+      }
+      Registry fInheritMaxDisconnectionTime
+      {
+        #Timeout settings for disconnection
+        Ensure = 'Present'
+        Key = 'HKLM:\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\ICA-Tcp'
+        ValueName = 'fInheritMaxDisconnectionTime'
+        Force = $true
+        ValueData = '0'
+        ValueType = 'DWORD'
+      }
+      Registry MaxDisconnectionTime
+      {
+        #Maximum disconnection time (msec, 0 = unlimited)
+        Ensure = 'Present'
+        Key = 'HKLM:\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\ICA-Tcp'
+        ValueName = 'MaxDisconnectionTime'
+        Force = $true
+        ValueData = '43200000'
+        ValueType = 'DWORD'
+      }
+      Registry fInheritMaxIdleTime
+      {
+        #Timeout settings for idle time
+        Ensure = 'Present'
+        Key = 'HKLM:\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\ICA-Tcp'
+        ValueName = 'fInheritMaxIdleTime'
+        Force = $true
+        ValueData = '0'
+        ValueType = 'DWORD'
+      }
+      Registry MaxIdleTime
+      {
+        #Maximum idle time (msec, 0 = unlimited)
+        Ensure = 'Present'
+        Key = 'HKLM:\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\ICA-Tcp'
+        ValueName = 'MaxIdleTime'
+        Force = $true
+        ValueData = '172800000'
+        ValueType = 'DWORD'
+      }
+      Registry fDisableExe
+      {
+        #Run only published applications
+        Ensure = 'Present'
+        Key = 'HKLM:\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\ICA-Tcp'
+        ValueName = 'fDisableExe'
+        Force = $true
+        ValueData = '1'
+        ValueType = 'DWORD'
+      }
+      Registry fPromptForPassword
+      {
+        #Always prompt client for password upon connection
+        Ensure = 'Present'
+        Key = 'HKLM:\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\RDP-Tcp'
+        ValueName = 'fPromptForPassword'
+        Force = $true
+        ValueData = '0'
+        ValueType = 'DWORD'
+      }
+      Registry fInheritMaxDisconnectionTime
+      {
+        #Timeout settings for disconnection
+        Ensure = 'Present'
+        Key = 'HKLM:\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\RDP-Tcp'
+        ValueName = 'fInheritMaxDisconnectionTime'
+        Force = $true
+        ValueData = '0'
+        ValueType = 'DWORD'
+      }
+      Registry MaxDisconnectionTime
+      {
+        #Maximum disconnection time (msec, 0 = unlimited)
+        Ensure = 'Present'
+        Key = 'HKLM:\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\RDP-Tcp'
+        ValueName = 'MaxDisconnectionTime'
+        Force = $true
+        ValueData = '43200000'
+        ValueType = 'DWORD'
+      }
+      Registry fInheritMaxIdleTime
+      {
+        #Timeout settings for idle time
+        Ensure = 'Present'
+        Key = 'HKLM:\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\RDP-Tcp'
+        ValueName = 'fInheritMaxIdleTime'
+        Force = $true
+        ValueData = '0'
+        ValueType = 'DWORD'
+      }
+      Registry MaxIdleTime
+      {
+        #Maximum idle time (msec, 0 = unlimited)
+        Ensure = 'Present'
+        Key = 'HKLM:\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\RDP-Tcp'
+        ValueName = 'MaxIdleTime'
+        Force = $true
+        ValueData = '172800000'
+        ValueType = 'DWORD'
+      }
+      Registry fDisableExe
+      {
+        #Run only published applications
+        Ensure = 'Present'
+        Key = 'HKLM:\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\RDP-Tcp'
+        ValueName = 'fDisableExe'
+        Force = $true
+        ValueData = '1'
+        ValueType = 'DWORD'
+      }
+      Registry fPromptForPassword
+      {
+        #Always prompt client for password upon connection
+        Ensure = 'Present'
+        Key = 'HKLM:\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\ICA-CGP'
+        ValueName = 'fPromptForPassword'
+        Force = $true
+        ValueData = '0'
+        ValueType = 'DWORD'
+      }
+      Registry fInheritMaxDisconnectionTime
+      {
+        #Timeout settings for disconnection
+        Ensure = 'Present'
+        Key = 'HKLM:\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\ICA-CGP'
+        ValueName = 'fInheritMaxDisconnectionTime'
+        Force = $true
+        ValueData = '0'
+        ValueType = 'DWORD'
+      }
+      Registry MaxDisconnectionTime
+      {
+        #Maximum disconnection time (msec, 0 = unlimited)
+        Ensure = 'Present'
+        Key = 'HKLM:\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\ICA-CGP'
+        ValueName = 'MaxDisconnectionTime'
+        Force = $true
+        ValueData = '43200000'
+        ValueType = 'DWORD'
+      }
+      Registry fInheritMaxIdleTime
+      {
+        #Timeout settings for idle time
+        Ensure = 'Present'
+        Key = 'HKLM:\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\ICA-CGP'
+        ValueName = 'fInheritMaxIdleTime'
+        Force = $true
+        ValueData = '0'
+        ValueType = 'DWORD'
+      }
+      Registry MaxIdleTime
+      {
+        #Maximum idle time (msec, 0 = unlimited)
+        Ensure = 'Present'
+        Key = 'HKLM:\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\ICA-CGP'
+        ValueName = 'MaxIdleTime'
+        Force = $true
+        ValueData = '172800000'
+        ValueType = 'DWORD'
+      }
+      Registry fDisableExe
+      {
+        #Run only published applications
+        Ensure = 'Present'
+        Key = 'HKLM:\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\ICA-CGP'
+        ValueName = 'fDisableExe'
+        Force = $true
+        ValueData = '1'
+        ValueType = 'DWORD'
+      }
+      Registry fPromptForPassword
+      {
+        #Always prompt client for password upon connection
+        Ensure = 'Present'
+        Key = 'HKLM:\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\ICA-CGP-1'
+        ValueName = 'fPromptForPassword'
+        Force = $true
+        ValueData = '0'
+        ValueType = 'DWORD'
+      }
+      Registry fInheritMaxDisconnectionTime
+      {
+        #Timeout settings for disconnection
+        Ensure = 'Present'
+        Key = 'HKLM:\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\ICA-CGP-1'
+        ValueName = 'fInheritMaxDisconnectionTime'
+        Force = $true
+        ValueData = '0'
+        ValueType = 'DWORD'
+      }
+      Registry MaxDisconnectionTime
+      {
+        #Maximum disconnection time (msec, 0 = unlimited)
+        Ensure = 'Present'
+        Key = 'HKLM:\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\ICA-CGP-1'
+        ValueName = 'MaxDisconnectionTime'
+        Force = $true
+        ValueData = '43200000'
+        ValueType = 'DWORD'
+      }
+      Registry fInheritMaxIdleTime
+      {
+        #Timeout settings for idle time
+        Ensure = 'Present'
+        Key = 'HKLM:\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\ICA-CGP-1'
+        ValueName = 'fInheritMaxIdleTime'
+        Force = $true
+        ValueData = '0'
+        ValueType = 'DWORD'
+      }
+      Registry MaxIdleTime
+      {
+        #Maximum idle time (msec, 0 = unlimited)
+        Ensure = 'Present'
+        Key = 'HKLM:\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\ICA-CGP-1'
+        ValueName = 'MaxIdleTime'
+        Force = $true
+        ValueData = '172800000'
+        ValueType = 'DWORD'
+      }
+      Registry fDisableExe
+      {
+        #Run only published applications
+        Ensure = 'Present'
+        Key = 'HKLM:\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\ICA-CGP-1'
+        ValueName = 'fDisableExe'
+        Force = $true
+        ValueData = '1'
+        ValueType = 'DWORD'
+      }
+      Registry fPromptForPassword
+      {
+        #Always prompt client for password upon connection
+        Ensure = 'Present'
+        Key = 'HKLM:\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\ICA-CGP-2'
+        ValueName = 'fPromptForPassword'
+        Force = $true
+        ValueData = '0'
+        ValueType = 'DWORD'
+      }
+      Registry fInheritMaxDisconnectionTime
+      {
+        #Timeout settings for disconnection
+        Ensure = 'Present'
+        Key = 'HKLM:\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\ICA-CGP-2'
+        ValueName = 'fInheritMaxDisconnectionTime'
+        Force = $true
+        ValueData = '0'
+        ValueType = 'DWORD'
+      }
+      Registry MaxDisconnectionTime
+      {
+        #Maximum disconnection time (msec, 0 = unlimited)
+        Ensure = 'Present'
+        Key = 'HKLM:\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\ICA-CGP-2'
+        ValueName = 'MaxDisconnectionTime'
+        Force = $true
+        ValueData = '43200000'
+        ValueType = 'DWORD'
+      }
+      Registry fInheritMaxIdleTime
+      {
+        #Timeout settings for idle time
+        Ensure = 'Present'
+        Key = 'HKLM:\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\ICA-CGP-2'
+        ValueName = 'fInheritMaxIdleTime'
+        Force = $true
+        ValueData = '0'
+        ValueType = 'DWORD'
+      }
+      Registry MaxIdleTime
+      {
+        #Maximum idle time (msec, 0 = unlimited)
+        Ensure = 'Present'
+        Key = 'HKLM:\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\ICA-CGP-2'
+        ValueName = 'MaxIdleTime'
+        Force = $true
+        ValueData = '172800000'
+        ValueType = 'DWORD'
+      }
+      Registry fDisableExe
+      {
+        #Run only published applications
+        Ensure = 'Present'
+        Key = 'HKLM:\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\ICA-CGP-2'
+        ValueName = 'fDisableExe'
+        Force = $true
+        ValueData = '1'
+        ValueType = 'DWORD'
+      }
+      Registry fPromptForPassword
+      {
+        #Always prompt client for password upon connection
+        Ensure = 'Present'
+        Key = 'HKLM:\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\ICA-CGP-3'
+        ValueName = 'fPromptForPassword'
+        Force = $true
+        ValueData = '0'
+        ValueType = 'DWORD'
+      }
+      Registry fInheritMaxDisconnectionTime
+      {
+        #Timeout settings for disconnection
+        Ensure = 'Present'
+        Key = 'HKLM:\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\ICA-CGP-3'
+        ValueName = 'fInheritMaxDisconnectionTime'
+        Force = $true
+        ValueData = '0'
+        ValueType = 'DWORD'
+      }
+      Registry MaxDisconnectionTime
+      {
+        #Maximum disconnection time (msec, 0 = unlimited)
+        Ensure = 'Present'
+        Key = 'HKLM:\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\ICA-CGP-3'
+        ValueName = 'MaxDisconnectionTime'
+        Force = $true
+        ValueData = '43200000'
+        ValueType = 'DWORD'
+      }
+      Registry fInheritMaxIdleTime
+      {
+        #Timeout settings for idle time
+        Ensure = 'Present'
+        Key = 'HKLM:\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\ICA-CGP-3'
+        ValueName = 'fInheritMaxIdleTime'
+        Force = $true
+        ValueData = '0'
+        ValueType = 'DWORD'
+      }
+      Registry MaxIdleTime
+      {
+        #Maximum idle time (msec, 0 = unlimited)
+        Ensure = 'Present'
+        Key = 'HKLM:\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\ICA-CGP-3'
+        ValueName = 'MaxIdleTime'
+        Force = $true
+        ValueData = '172800000'
+        ValueType = 'DWORD'
+      }
+      Registry fDisableExe
+      {
+        #Run only published applications
+        Ensure = 'Present'
+        Key = 'HKLM:\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\ICA-CGP-3'
+        ValueName = 'fDisableExe'
+        Force = $true
+        ValueData = '1'
+        ValueType = 'DWORD'
+      }
+      Registry fPromptForPassword
+      {
+        #Always prompt client for password upon connection
+        Ensure = 'Present'
+        Key = 'HKLM:\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\ICA-HTML5'
+        ValueName = 'fPromptForPassword'
+        Force = $true
+        ValueData = '0'
+        ValueType = 'DWORD'
+      }
+      Registry fInheritMaxDisconnectionTime
+      {
+        #Timeout settings for disconnection
+        Ensure = 'Present'
+        Key = 'HKLM:\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\ICA-HTML5'
+        ValueName = 'fInheritMaxDisconnectionTime'
+        Force = $true
+        ValueData = '0'
+        ValueType = 'DWORD'
+      }
+      Registry MaxDisconnectionTime
+      {
+        #Maximum disconnection time (msec, 0 = unlimited)
+        Ensure = 'Present'
+        Key = 'HKLM:\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\ICA-HTML5'
+        ValueName = 'MaxDisconnectionTime'
+        Force = $true
+        ValueData = '43200000'
+        ValueType = 'DWORD'
+      }
+      Registry fInheritMaxIdleTime
+      {
+        #Timeout settings for idle time
+        Ensure = 'Present'
+        Key = 'HKLM:\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\ICA-HTML5'
+        ValueName = 'fInheritMaxIdleTime'
+        Force = $true
+        ValueData = '0'
+        ValueType = 'DWORD'
+      }
+      Registry MaxIdleTime
+      {
+        #Maximum idle time (msec, 0 = unlimited)
+        Ensure = 'Present'
+        Key = 'HKLM:\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\ICA-HTML5'
+        ValueName = 'MaxIdleTime'
+        Force = $true
+        ValueData = '172800000'
+        ValueType = 'DWORD'
+      }
+      Registry fDisableExe
+      {
+        #Run only published applications
+        Ensure = 'Present'
+        Key = 'HKLM:\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\ICA-HTML5'
+        ValueName = 'fDisableExe'
+        Force = $true
+        ValueData = '1'
+        ValueType = 'DWORD'
+      }
+#endregion
+#region ScheduleTask
+    cScheduleTask ScheduledDefrag
+    {
+        #Disable Disk Defragmenter Service
+        Ensure = "Present"
+        TaskName = "ScheduledDefrag"
+        TaskPath = "Microsoft\Windows\Defrag\"
+        Disable = $true
+    }
+    cScheduleTask MPIdleTask
+    {
+        #Disable Windows Defender Service
+        Ensure = "Present"
+        TaskName = "MPIdleTask"
+        TaskPath = "Microsoft\Windows Defender\"
+        Disable = $true
+    }
+    cScheduleTask MP_Scheduled_Scan
+    {
+        #Disable Windows Defender Service
+        Ensure = "Present"
+        TaskName = "MP Scheduled Scan"
+        TaskPath = "Microsoft\Windows Defender\"
+        Disable = $true
+    }
+    cScheduleTask SR
+    {
+        #Disable Windows System Restore
+        Ensure = "Present"
+        TaskName = "SR"
+        TaskPath = "Microsoft\Windows\SystemRestore\"
+        Disable = $true
+    }
+    cScheduleTask AitAgent
+    {
+        #
+        Ensure = "Present"
+        TaskName = "AitAgent"
+        TaskPath = "microsoft\windows\Application Experience\"
+        Disable = $true
+    }
+    cScheduleTask ProgramDataUpdater
+    {
+        #
+        Ensure = "Present"
+        TaskName = "ProgramDataUpdater"
+        TaskPath = "microsoft\windows\Application Experience\"
+        Disable = $true
+    }
+    cScheduleTask Proxy
+    {
+        #
+        Ensure = "Present"
+        TaskName = "Proxy"
+        TaskPath = "microsoft\windows\Autochk\"
+        Disable = $true
+    }
+    cScheduleTask Consolidator
+    {
+        #
+        Ensure = "Present"
+        TaskName = "Consolidator"
+        TaskPath = "microsoft\windows\Customer Experience Improvement Program\"
+        Disable = $true
+    }
+    cScheduleTask KernelCeipTask
+    {
+        #
+        Ensure = "Present"
+        TaskName = "KernelCeipTask"
+        TaskPath = "microsoft\windows\Customer Experience Improvement Program\"
+        Disable = $true
+    }
+    cScheduleTask UsbCeip
+    {
+        #
+        Ensure = "Present"
+        TaskName = "UsbCeip"
+        TaskPath = "microsoft\windows\Customer Experience Improvement Program\"
+        Disable = $true
+    }
+    cScheduleTask Scheduled
+    {
+        #
+        Ensure = "Present"
+        TaskName = "Scheduled"
+        TaskPath = "microsoft\windows\Diagnosis\"
+        Disable = $true
+    }
+    cScheduleTask Microsoft-Windows-DiskDiagnosticDataCollector
+    {
+        #
+        Ensure = "Present"
+        TaskName = "Microsoft-Windows-DiskDiagnosticDataCollector"
+        TaskPath = "microsoft\windows\DiskDiagnostic\"
+        Disable = $true
+    }
+    cScheduleTask Microsoft-Windows-DiskDiagnosticResolver
+    {
+        #
+        Ensure = "Present"
+        TaskName = "Microsoft-Windows-DiskDiagnosticResolver"
+        TaskPath = "microsoft\windows\DiskDiagnostic\"
+        Disable = $true
+    }
+    cScheduleTask WinSAT
+    {
+        #
+        Ensure = "Present"
+        TaskName = "WinSAT"
+        TaskPath = "microsoft\windows\Maintenance\"
+        Disable = $true
+    }
+    cScheduleTask HotStart
+    {
+        #
+        Ensure = "Present"
+        TaskName = "HotStart"
+        TaskPath = "microsoft\windows\MobilePC\"
+        Disable = $true
+    }
+    cScheduleTask AnalyzeSystem
+    {
+        #
+        Ensure = "Present"
+        TaskName = "AnalyzeSystem"
+        TaskPath = "microsoft\windows\Power Efficiency Diagnostics\"
+        Disable = $true
+    }
+    cScheduleTask RacTask
+    {
+        #
+        Ensure = "Present"
+        TaskName = "RacTask"
+        TaskPath = "microsoft\windows\RAC\"
+        Disable = $true
+    }
+    cScheduleTask MobilityManager
+    {
+        #
+        Ensure = "Present"
+        TaskName = "MobilityManager"
+        TaskPath = "microsoft\windows\Ras\"
+        Disable = $true
+    }
+    cScheduleTask RegIdleBackup
+    {
+        #
+        Ensure = "Present"
+        TaskName = "RegIdleBackup"
+        TaskPath = "microsoft\windows\Registry\"
+        Disable = $true
+    }
+    cScheduleTask AutoWake
+    {
+        #
+        Ensure = "Present"
+        TaskName = "AutoWake"
+        TaskPath = "microsoft\windows\SideShow\"
+        Disable = $true
+    }
+    cScheduleTask GadgetManager
+    {
+        #
+        Ensure = "Present"
+        TaskName = "GadgetManager"
+        TaskPath = "microsoft\windows\SideShow\"
+        Disable = $true
+    }
+    cScheduleTask SessionAgent
+    {
+        #
+        Ensure = "Present"
+        TaskName = "SessionAgent"
+        TaskPath = "microsoft\windows\SideShow\"
+        Disable = $true
+    }
+    cScheduleTask SystemDataProviders
+    {
+        #
+        Ensure = "Present"
+        TaskName = "SystemDataProviders"
+        TaskPath = "microsoft\windows\SideShow\"
+        Disable = $true
+    }
+    cScheduleTask ResolutionHost
+    {
+        #
+        Ensure = "Present"
+        TaskName = "ResolutionHost"
+        TaskPath = "microsoft\windows\WDI\"
+        Disable = $true
+    }
+    cScheduleTask BfeOnServiceStartTypeChange
+    {
+        #
+        Ensure = "Present"
+        TaskName = "BfeOnServiceStartTypeChange"
+        TaskPath = "microsoft\windows\Windows Filtering Platform\"
+        Disable = $true
+    }
+    cScheduleTask UpdateLibrary
+    {
+        #
+        Ensure = "Present"
+        TaskName = "UpdateLibrary"
+        TaskPath = "microsoft\windows\Windows Media Sharing\"
+        Disable = $true
+    }
+    cScheduleTask ConfigNotification
+    {
+        #
+        Ensure = "Present"
+        TaskName = "ConfigNotification"
+        TaskPath = "microsoft\windows\WindowsBackup\"
+        Disable = $true
+    }
+    cScheduleTask Maintenance_Configurator
+    {
+        #http://www.petri.com/windows-server-2012-disable-automatic-maintenance-using-psexec.htm
+        Ensure = "Present"
+        TaskName = "Maintenance Configurator"
+        TaskPath = "Microsoft\Windows\TaskScheduler\"
+        Disable = $true
+    }
 #endregion
     }
 
