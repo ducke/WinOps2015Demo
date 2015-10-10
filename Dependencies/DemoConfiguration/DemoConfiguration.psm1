@@ -248,423 +248,423 @@ configuration DemoConfiguration {
       }
 #endregion
 #region Customizing Registry
-      Registry fPromptForPasswordTCP
+      Registry fPromptForPassword_ICA-Tcp
       {
         #Always prompt client for password upon connection
         Ensure = 'Present'
         Key = 'HKLM:\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\ICA-Tcp'
         ValueName = 'fPromptForPassword'
-        Force = $true
+        Force = True
         ValueData = '0'
         ValueType = 'DWORD'
       }
-      Registry fInheritMaxDisconnectionTime
+      Registry fInheritMaxDisconnectionTime_ICA-Tcp
       {
         #Timeout settings for disconnection
         Ensure = 'Present'
         Key = 'HKLM:\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\ICA-Tcp'
         ValueName = 'fInheritMaxDisconnectionTime'
-        Force = $true
+        Force = True
         ValueData = '0'
         ValueType = 'DWORD'
       }
-      Registry MaxDisconnectionTime
+      Registry MaxDisconnectionTime_ICA-Tcp
       {
         #Maximum disconnection time (msec, 0 = unlimited)
         Ensure = 'Present'
         Key = 'HKLM:\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\ICA-Tcp'
         ValueName = 'MaxDisconnectionTime'
-        Force = $true
+        Force = True
         ValueData = '43200000'
         ValueType = 'DWORD'
       }
-      Registry fInheritMaxIdleTime
+      Registry fInheritMaxIdleTime_ICA-Tcp
       {
         #Timeout settings for idle time
         Ensure = 'Present'
         Key = 'HKLM:\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\ICA-Tcp'
         ValueName = 'fInheritMaxIdleTime'
-        Force = $true
+        Force = True
         ValueData = '0'
         ValueType = 'DWORD'
       }
-      Registry MaxIdleTime
+      Registry MaxIdleTime_ICA-Tcp
       {
         #Maximum idle time (msec, 0 = unlimited)
         Ensure = 'Present'
         Key = 'HKLM:\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\ICA-Tcp'
         ValueName = 'MaxIdleTime'
-        Force = $true
+        Force = True
         ValueData = '172800000'
         ValueType = 'DWORD'
       }
-      Registry fDisableExe
+      Registry fDisableExe_ICA-Tcp
       {
         #Run only published applications
         Ensure = 'Present'
         Key = 'HKLM:\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\ICA-Tcp'
         ValueName = 'fDisableExe'
-        Force = $true
+        Force = True
         ValueData = '1'
         ValueType = 'DWORD'
       }
-      Registry fPromptForPasswordRDP
+      Registry fPromptForPassword_RDP-Tcp
       {
         #Always prompt client for password upon connection
         Ensure = 'Present'
         Key = 'HKLM:\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\RDP-Tcp'
         ValueName = 'fPromptForPassword'
-        Force = $true
+        Force = True
         ValueData = '0'
         ValueType = 'DWORD'
       }
-      Registry fInheritMaxDisconnectionTime
+      Registry fInheritMaxDisconnectionTime_RDP-Tcp
       {
         #Timeout settings for disconnection
         Ensure = 'Present'
         Key = 'HKLM:\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\RDP-Tcp'
         ValueName = 'fInheritMaxDisconnectionTime'
-        Force = $true
+        Force = True
         ValueData = '0'
         ValueType = 'DWORD'
       }
-      Registry MaxDisconnectionTime
+      Registry MaxDisconnectionTime_RDP-Tcp
       {
         #Maximum disconnection time (msec, 0 = unlimited)
         Ensure = 'Present'
         Key = 'HKLM:\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\RDP-Tcp'
         ValueName = 'MaxDisconnectionTime'
-        Force = $true
+        Force = True
         ValueData = '43200000'
         ValueType = 'DWORD'
       }
-      Registry fInheritMaxIdleTime
+      Registry fInheritMaxIdleTime_RDP-Tcp
       {
         #Timeout settings for idle time
         Ensure = 'Present'
         Key = 'HKLM:\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\RDP-Tcp'
         ValueName = 'fInheritMaxIdleTime'
-        Force = $true
+        Force = True
         ValueData = '0'
         ValueType = 'DWORD'
       }
-      Registry MaxIdleTime
+      Registry MaxIdleTime_RDP-Tcp
       {
         #Maximum idle time (msec, 0 = unlimited)
         Ensure = 'Present'
         Key = 'HKLM:\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\RDP-Tcp'
         ValueName = 'MaxIdleTime'
-        Force = $true
+        Force = True
         ValueData = '172800000'
         ValueType = 'DWORD'
       }
-      Registry fDisableExe
+      Registry fDisableExe_RDP-Tcp
       {
         #Run only published applications
         Ensure = 'Present'
         Key = 'HKLM:\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\RDP-Tcp'
         ValueName = 'fDisableExe'
-        Force = $true
+        Force = True
         ValueData = '1'
         ValueType = 'DWORD'
       }
-      Registry fPromptForPasswordICA
+      Registry fPromptForPassword_ICA-CGP
       {
         #Always prompt client for password upon connection
         Ensure = 'Present'
         Key = 'HKLM:\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\ICA-CGP'
         ValueName = 'fPromptForPassword'
-        Force = $true
+        Force = True
         ValueData = '0'
         ValueType = 'DWORD'
       }
-      Registry fInheritMaxDisconnectionTime
+      Registry fInheritMaxDisconnectionTime_ICA-CGP
       {
         #Timeout settings for disconnection
         Ensure = 'Present'
         Key = 'HKLM:\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\ICA-CGP'
         ValueName = 'fInheritMaxDisconnectionTime'
-        Force = $true
+        Force = True
         ValueData = '0'
         ValueType = 'DWORD'
       }
-      Registry MaxDisconnectionTime
+      Registry MaxDisconnectionTime_ICA-CGP
       {
         #Maximum disconnection time (msec, 0 = unlimited)
         Ensure = 'Present'
         Key = 'HKLM:\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\ICA-CGP'
         ValueName = 'MaxDisconnectionTime'
-        Force = $true
+        Force = True
         ValueData = '43200000'
         ValueType = 'DWORD'
       }
-      Registry fInheritMaxIdleTime
+      Registry fInheritMaxIdleTime_ICA-CGP
       {
         #Timeout settings for idle time
         Ensure = 'Present'
         Key = 'HKLM:\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\ICA-CGP'
         ValueName = 'fInheritMaxIdleTime'
-        Force = $true
+        Force = True
         ValueData = '0'
         ValueType = 'DWORD'
       }
-      Registry MaxIdleTime
+      Registry MaxIdleTime_ICA-CGP
       {
         #Maximum idle time (msec, 0 = unlimited)
         Ensure = 'Present'
         Key = 'HKLM:\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\ICA-CGP'
         ValueName = 'MaxIdleTime'
-        Force = $true
+        Force = True
         ValueData = '172800000'
         ValueType = 'DWORD'
       }
-      Registry fDisableExe
+      Registry fDisableExe_ICA-CGP
       {
         #Run only published applications
         Ensure = 'Present'
         Key = 'HKLM:\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\ICA-CGP'
         ValueName = 'fDisableExe'
-        Force = $true
+        Force = True
         ValueData = '1'
         ValueType = 'DWORD'
       }
-      Registry fPromptForPasswordICA2
+      Registry fPromptForPassword_ICA-CGP-1
       {
         #Always prompt client for password upon connection
         Ensure = 'Present'
         Key = 'HKLM:\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\ICA-CGP-1'
         ValueName = 'fPromptForPassword'
-        Force = $true
+        Force = True
         ValueData = '0'
         ValueType = 'DWORD'
       }
-      Registry fInheritMaxDisconnectionTime
+      Registry fInheritMaxDisconnectionTime_ICA-CGP-1
       {
         #Timeout settings for disconnection
         Ensure = 'Present'
         Key = 'HKLM:\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\ICA-CGP-1'
         ValueName = 'fInheritMaxDisconnectionTime'
-        Force = $true
+        Force = True
         ValueData = '0'
         ValueType = 'DWORD'
       }
-      Registry MaxDisconnectionTime
+      Registry MaxDisconnectionTime_ICA-CGP-1
       {
         #Maximum disconnection time (msec, 0 = unlimited)
         Ensure = 'Present'
         Key = 'HKLM:\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\ICA-CGP-1'
         ValueName = 'MaxDisconnectionTime'
-        Force = $true
+        Force = True
         ValueData = '43200000'
         ValueType = 'DWORD'
       }
-      Registry fInheritMaxIdleTime
+      Registry fInheritMaxIdleTime_ICA-CGP-1
       {
         #Timeout settings for idle time
         Ensure = 'Present'
         Key = 'HKLM:\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\ICA-CGP-1'
         ValueName = 'fInheritMaxIdleTime'
-        Force = $true
+        Force = True
         ValueData = '0'
         ValueType = 'DWORD'
       }
-      Registry MaxIdleTime
+      Registry MaxIdleTime_ICA-CGP-1
       {
         #Maximum idle time (msec, 0 = unlimited)
         Ensure = 'Present'
         Key = 'HKLM:\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\ICA-CGP-1'
         ValueName = 'MaxIdleTime'
-        Force = $true
+        Force = True
         ValueData = '172800000'
         ValueType = 'DWORD'
       }
-      Registry fDisableExe
+      Registry fDisableExe_ICA-CGP-1
       {
         #Run only published applications
         Ensure = 'Present'
         Key = 'HKLM:\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\ICA-CGP-1'
         ValueName = 'fDisableExe'
-        Force = $true
+        Force = True
         ValueData = '1'
         ValueType = 'DWORD'
       }
-      Registry fPromptForPasswordICA3
+      Registry fPromptForPassword_ICA-CGP-2
       {
         #Always prompt client for password upon connection
         Ensure = 'Present'
         Key = 'HKLM:\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\ICA-CGP-2'
         ValueName = 'fPromptForPassword'
-        Force = $true
+        Force = True
         ValueData = '0'
         ValueType = 'DWORD'
       }
-      Registry fInheritMaxDisconnectionTime
+      Registry fInheritMaxDisconnectionTime_ICA-CGP-2
       {
         #Timeout settings for disconnection
         Ensure = 'Present'
         Key = 'HKLM:\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\ICA-CGP-2'
         ValueName = 'fInheritMaxDisconnectionTime'
-        Force = $true
+        Force = True
         ValueData = '0'
         ValueType = 'DWORD'
       }
-      Registry MaxDisconnectionTime
+      Registry MaxDisconnectionTime_ICA-CGP-2
       {
         #Maximum disconnection time (msec, 0 = unlimited)
         Ensure = 'Present'
         Key = 'HKLM:\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\ICA-CGP-2'
         ValueName = 'MaxDisconnectionTime'
-        Force = $true
+        Force = True
         ValueData = '43200000'
         ValueType = 'DWORD'
       }
-      Registry fInheritMaxIdleTime
+      Registry fInheritMaxIdleTime_ICA-CGP-2
       {
         #Timeout settings for idle time
         Ensure = 'Present'
         Key = 'HKLM:\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\ICA-CGP-2'
         ValueName = 'fInheritMaxIdleTime'
-        Force = $true
+        Force = True
         ValueData = '0'
         ValueType = 'DWORD'
       }
-      Registry MaxIdleTime
+      Registry MaxIdleTime_ICA-CGP-2
       {
         #Maximum idle time (msec, 0 = unlimited)
         Ensure = 'Present'
         Key = 'HKLM:\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\ICA-CGP-2'
         ValueName = 'MaxIdleTime'
-        Force = $true
+        Force = True
         ValueData = '172800000'
         ValueType = 'DWORD'
       }
-      Registry fDisableExe
+      Registry fDisableExe_ICA-CGP-2
       {
         #Run only published applications
         Ensure = 'Present'
         Key = 'HKLM:\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\ICA-CGP-2'
         ValueName = 'fDisableExe'
-        Force = $true
+        Force = True
         ValueData = '1'
         ValueType = 'DWORD'
       }
-      Registry fPromptForPasswordICA4
+      Registry fPromptForPassword_ICA-CGP-3
       {
         #Always prompt client for password upon connection
         Ensure = 'Present'
         Key = 'HKLM:\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\ICA-CGP-3'
         ValueName = 'fPromptForPassword'
-        Force = $true
+        Force = True
         ValueData = '0'
         ValueType = 'DWORD'
       }
-      Registry fInheritMaxDisconnectionTime
+      Registry fInheritMaxDisconnectionTime_ICA-CGP-3
       {
         #Timeout settings for disconnection
         Ensure = 'Present'
         Key = 'HKLM:\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\ICA-CGP-3'
         ValueName = 'fInheritMaxDisconnectionTime'
-        Force = $true
+        Force = True
         ValueData = '0'
         ValueType = 'DWORD'
       }
-      Registry MaxDisconnectionTime
+      Registry MaxDisconnectionTime_ICA-CGP-3
       {
         #Maximum disconnection time (msec, 0 = unlimited)
         Ensure = 'Present'
         Key = 'HKLM:\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\ICA-CGP-3'
         ValueName = 'MaxDisconnectionTime'
-        Force = $true
+        Force = True
         ValueData = '43200000'
         ValueType = 'DWORD'
       }
-      Registry fInheritMaxIdleTime
+      Registry fInheritMaxIdleTime_ICA-CGP-3
       {
         #Timeout settings for idle time
         Ensure = 'Present'
         Key = 'HKLM:\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\ICA-CGP-3'
         ValueName = 'fInheritMaxIdleTime'
-        Force = $true
+        Force = True
         ValueData = '0'
         ValueType = 'DWORD'
       }
-      Registry MaxIdleTime
+      Registry MaxIdleTime_ICA-CGP-3
       {
         #Maximum idle time (msec, 0 = unlimited)
         Ensure = 'Present'
         Key = 'HKLM:\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\ICA-CGP-3'
         ValueName = 'MaxIdleTime'
-        Force = $true
+        Force = True
         ValueData = '172800000'
         ValueType = 'DWORD'
       }
-      Registry fDisableExe
+      Registry fDisableExe_ICA-CGP-3
       {
         #Run only published applications
         Ensure = 'Present'
         Key = 'HKLM:\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\ICA-CGP-3'
         ValueName = 'fDisableExe'
-        Force = $true
+        Force = True
         ValueData = '1'
         ValueType = 'DWORD'
       }
-      Registry fPromptForPasswordICA5
+      Registry fPromptForPassword_ICA-HTML5
       {
         #Always prompt client for password upon connection
         Ensure = 'Present'
         Key = 'HKLM:\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\ICA-HTML5'
         ValueName = 'fPromptForPassword'
-        Force = $true
+        Force = True
         ValueData = '0'
         ValueType = 'DWORD'
       }
-      Registry fInheritMaxDisconnectionTime
+      Registry fInheritMaxDisconnectionTime_ICA-HTML5
       {
         #Timeout settings for disconnection
         Ensure = 'Present'
         Key = 'HKLM:\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\ICA-HTML5'
         ValueName = 'fInheritMaxDisconnectionTime'
-        Force = $true
+        Force = True
         ValueData = '0'
         ValueType = 'DWORD'
       }
-      Registry MaxDisconnectionTime
+      Registry MaxDisconnectionTime_ICA-HTML5
       {
         #Maximum disconnection time (msec, 0 = unlimited)
         Ensure = 'Present'
         Key = 'HKLM:\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\ICA-HTML5'
         ValueName = 'MaxDisconnectionTime'
-        Force = $true
+        Force = True
         ValueData = '43200000'
         ValueType = 'DWORD'
       }
-      Registry fInheritMaxIdleTime
+      Registry fInheritMaxIdleTime_ICA-HTML5
       {
         #Timeout settings for idle time
         Ensure = 'Present'
         Key = 'HKLM:\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\ICA-HTML5'
         ValueName = 'fInheritMaxIdleTime'
-        Force = $true
+        Force = True
         ValueData = '0'
         ValueType = 'DWORD'
       }
-      Registry MaxIdleTime
+      Registry MaxIdleTime_ICA-HTML5
       {
         #Maximum idle time (msec, 0 = unlimited)
         Ensure = 'Present'
         Key = 'HKLM:\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\ICA-HTML5'
         ValueName = 'MaxIdleTime'
-        Force = $true
+        Force = True
         ValueData = '172800000'
         ValueType = 'DWORD'
       }
-      Registry fDisableExe
+      Registry fDisableExe_ICA-HTML5
       {
         #Run only published applications
         Ensure = 'Present'
         Key = 'HKLM:\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\ICA-HTML5'
         ValueName = 'fDisableExe'
-        Force = $true
+        Force = True
         ValueData = '1'
         ValueType = 'DWORD'
       }
