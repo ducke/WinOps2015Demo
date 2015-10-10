@@ -254,7 +254,7 @@ configuration DemoConfiguration {
         Ensure = 'Present'
         Key = 'HKLM:\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\ICA-Tcp'
         ValueName = 'fPromptForPassword'
-        Force = True
+        Force =$true
         ValueData = '0'
         ValueType = 'DWORD'
       }
@@ -264,7 +264,7 @@ configuration DemoConfiguration {
         Ensure = 'Present'
         Key = 'HKLM:\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\ICA-Tcp'
         ValueName = 'fInheritMaxDisconnectionTime'
-        Force = True
+        Force =$true
         ValueData = '0'
         ValueType = 'DWORD'
       }
@@ -274,7 +274,7 @@ configuration DemoConfiguration {
         Ensure = 'Present'
         Key = 'HKLM:\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\ICA-Tcp'
         ValueName = 'MaxDisconnectionTime'
-        Force = True
+        Force =$true
         ValueData = '43200000'
         ValueType = 'DWORD'
       }
@@ -284,7 +284,7 @@ configuration DemoConfiguration {
         Ensure = 'Present'
         Key = 'HKLM:\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\ICA-Tcp'
         ValueName = 'fInheritMaxIdleTime'
-        Force = True
+        Force =$true
         ValueData = '0'
         ValueType = 'DWORD'
       }
@@ -294,7 +294,7 @@ configuration DemoConfiguration {
         Ensure = 'Present'
         Key = 'HKLM:\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\ICA-Tcp'
         ValueName = 'MaxIdleTime'
-        Force = True
+        Force =$true
         ValueData = '172800000'
         ValueType = 'DWORD'
       }
@@ -304,7 +304,7 @@ configuration DemoConfiguration {
         Ensure = 'Present'
         Key = 'HKLM:\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\ICA-Tcp'
         ValueName = 'fDisableExe'
-        Force = True
+        Force =$true
         ValueData = '1'
         ValueType = 'DWORD'
       }
@@ -314,7 +314,7 @@ configuration DemoConfiguration {
         Ensure = 'Present'
         Key = 'HKLM:\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\RDP-Tcp'
         ValueName = 'fPromptForPassword'
-        Force = True
+        Force =$true
         ValueData = '0'
         ValueType = 'DWORD'
       }
@@ -324,7 +324,7 @@ configuration DemoConfiguration {
         Ensure = 'Present'
         Key = 'HKLM:\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\RDP-Tcp'
         ValueName = 'fInheritMaxDisconnectionTime'
-        Force = True
+        Force =$true
         ValueData = '0'
         ValueType = 'DWORD'
       }
@@ -334,7 +334,7 @@ configuration DemoConfiguration {
         Ensure = 'Present'
         Key = 'HKLM:\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\RDP-Tcp'
         ValueName = 'MaxDisconnectionTime'
-        Force = True
+        Force =$true
         ValueData = '43200000'
         ValueType = 'DWORD'
       }
@@ -344,7 +344,7 @@ configuration DemoConfiguration {
         Ensure = 'Present'
         Key = 'HKLM:\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\RDP-Tcp'
         ValueName = 'fInheritMaxIdleTime'
-        Force = True
+        Force =$true
         ValueData = '0'
         ValueType = 'DWORD'
       }
@@ -354,7 +354,7 @@ configuration DemoConfiguration {
         Ensure = 'Present'
         Key = 'HKLM:\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\RDP-Tcp'
         ValueName = 'MaxIdleTime'
-        Force = True
+        Force =$true
         ValueData = '172800000'
         ValueType = 'DWORD'
       }
@@ -364,7 +364,7 @@ configuration DemoConfiguration {
         Ensure = 'Present'
         Key = 'HKLM:\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\RDP-Tcp'
         ValueName = 'fDisableExe'
-        Force = True
+        Force =$true
         ValueData = '1'
         ValueType = 'DWORD'
       }
@@ -374,7 +374,7 @@ configuration DemoConfiguration {
         Ensure = 'Present'
         Key = 'HKLM:\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\ICA-CGP'
         ValueName = 'fPromptForPassword'
-        Force = True
+        Force =$true
         ValueData = '0'
         ValueType = 'DWORD'
       }
@@ -384,7 +384,7 @@ configuration DemoConfiguration {
         Ensure = 'Present'
         Key = 'HKLM:\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\ICA-CGP'
         ValueName = 'fInheritMaxDisconnectionTime'
-        Force = True
+        Force =$true
         ValueData = '0'
         ValueType = 'DWORD'
       }
@@ -394,7 +394,7 @@ configuration DemoConfiguration {
         Ensure = 'Present'
         Key = 'HKLM:\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\ICA-CGP'
         ValueName = 'MaxDisconnectionTime'
-        Force = True
+        Force =$true
         ValueData = '43200000'
         ValueType = 'DWORD'
       }
@@ -404,7 +404,7 @@ configuration DemoConfiguration {
         Ensure = 'Present'
         Key = 'HKLM:\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\ICA-CGP'
         ValueName = 'fInheritMaxIdleTime'
-        Force = True
+        Force =$true
         ValueData = '0'
         ValueType = 'DWORD'
       }
@@ -414,7 +414,7 @@ configuration DemoConfiguration {
         Ensure = 'Present'
         Key = 'HKLM:\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\ICA-CGP'
         ValueName = 'MaxIdleTime'
-        Force = True
+        Force =$true
         ValueData = '172800000'
         ValueType = 'DWORD'
       }
@@ -424,7 +424,7 @@ configuration DemoConfiguration {
         Ensure = 'Present'
         Key = 'HKLM:\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\ICA-CGP'
         ValueName = 'fDisableExe'
-        Force = True
+        Force =$true
         ValueData = '1'
         ValueType = 'DWORD'
       }
@@ -434,7 +434,7 @@ configuration DemoConfiguration {
         Ensure = 'Present'
         Key = 'HKLM:\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\ICA-CGP-1'
         ValueName = 'fPromptForPassword'
-        Force = True
+        Force =$true
         ValueData = '0'
         ValueType = 'DWORD'
       }
@@ -444,7 +444,7 @@ configuration DemoConfiguration {
         Ensure = 'Present'
         Key = 'HKLM:\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\ICA-CGP-1'
         ValueName = 'fInheritMaxDisconnectionTime'
-        Force = True
+        Force =$true
         ValueData = '0'
         ValueType = 'DWORD'
       }
@@ -454,7 +454,7 @@ configuration DemoConfiguration {
         Ensure = 'Present'
         Key = 'HKLM:\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\ICA-CGP-1'
         ValueName = 'MaxDisconnectionTime'
-        Force = True
+        Force =$true
         ValueData = '43200000'
         ValueType = 'DWORD'
       }
@@ -464,7 +464,7 @@ configuration DemoConfiguration {
         Ensure = 'Present'
         Key = 'HKLM:\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\ICA-CGP-1'
         ValueName = 'fInheritMaxIdleTime'
-        Force = True
+        Force =$true
         ValueData = '0'
         ValueType = 'DWORD'
       }
@@ -474,7 +474,7 @@ configuration DemoConfiguration {
         Ensure = 'Present'
         Key = 'HKLM:\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\ICA-CGP-1'
         ValueName = 'MaxIdleTime'
-        Force = True
+        Force =$true
         ValueData = '172800000'
         ValueType = 'DWORD'
       }
@@ -484,7 +484,7 @@ configuration DemoConfiguration {
         Ensure = 'Present'
         Key = 'HKLM:\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\ICA-CGP-1'
         ValueName = 'fDisableExe'
-        Force = True
+        Force =$true
         ValueData = '1'
         ValueType = 'DWORD'
       }
@@ -494,7 +494,7 @@ configuration DemoConfiguration {
         Ensure = 'Present'
         Key = 'HKLM:\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\ICA-CGP-2'
         ValueName = 'fPromptForPassword'
-        Force = True
+        Force =$true
         ValueData = '0'
         ValueType = 'DWORD'
       }
@@ -504,7 +504,7 @@ configuration DemoConfiguration {
         Ensure = 'Present'
         Key = 'HKLM:\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\ICA-CGP-2'
         ValueName = 'fInheritMaxDisconnectionTime'
-        Force = True
+        Force =$true
         ValueData = '0'
         ValueType = 'DWORD'
       }
@@ -514,7 +514,7 @@ configuration DemoConfiguration {
         Ensure = 'Present'
         Key = 'HKLM:\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\ICA-CGP-2'
         ValueName = 'MaxDisconnectionTime'
-        Force = True
+        Force =$true
         ValueData = '43200000'
         ValueType = 'DWORD'
       }
@@ -524,7 +524,7 @@ configuration DemoConfiguration {
         Ensure = 'Present'
         Key = 'HKLM:\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\ICA-CGP-2'
         ValueName = 'fInheritMaxIdleTime'
-        Force = True
+        Force =$true
         ValueData = '0'
         ValueType = 'DWORD'
       }
@@ -534,7 +534,7 @@ configuration DemoConfiguration {
         Ensure = 'Present'
         Key = 'HKLM:\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\ICA-CGP-2'
         ValueName = 'MaxIdleTime'
-        Force = True
+        Force =$true
         ValueData = '172800000'
         ValueType = 'DWORD'
       }
@@ -544,7 +544,7 @@ configuration DemoConfiguration {
         Ensure = 'Present'
         Key = 'HKLM:\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\ICA-CGP-2'
         ValueName = 'fDisableExe'
-        Force = True
+        Force =$true
         ValueData = '1'
         ValueType = 'DWORD'
       }
@@ -554,7 +554,7 @@ configuration DemoConfiguration {
         Ensure = 'Present'
         Key = 'HKLM:\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\ICA-CGP-3'
         ValueName = 'fPromptForPassword'
-        Force = True
+        Force =$true
         ValueData = '0'
         ValueType = 'DWORD'
       }
@@ -564,7 +564,7 @@ configuration DemoConfiguration {
         Ensure = 'Present'
         Key = 'HKLM:\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\ICA-CGP-3'
         ValueName = 'fInheritMaxDisconnectionTime'
-        Force = True
+        Force =$true
         ValueData = '0'
         ValueType = 'DWORD'
       }
@@ -574,7 +574,7 @@ configuration DemoConfiguration {
         Ensure = 'Present'
         Key = 'HKLM:\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\ICA-CGP-3'
         ValueName = 'MaxDisconnectionTime'
-        Force = True
+        Force =$true
         ValueData = '43200000'
         ValueType = 'DWORD'
       }
@@ -584,7 +584,7 @@ configuration DemoConfiguration {
         Ensure = 'Present'
         Key = 'HKLM:\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\ICA-CGP-3'
         ValueName = 'fInheritMaxIdleTime'
-        Force = True
+        Force =$true
         ValueData = '0'
         ValueType = 'DWORD'
       }
@@ -594,7 +594,7 @@ configuration DemoConfiguration {
         Ensure = 'Present'
         Key = 'HKLM:\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\ICA-CGP-3'
         ValueName = 'MaxIdleTime'
-        Force = True
+        Force =$true
         ValueData = '172800000'
         ValueType = 'DWORD'
       }
@@ -604,7 +604,7 @@ configuration DemoConfiguration {
         Ensure = 'Present'
         Key = 'HKLM:\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\ICA-CGP-3'
         ValueName = 'fDisableExe'
-        Force = True
+        Force =$true
         ValueData = '1'
         ValueType = 'DWORD'
       }
@@ -614,7 +614,7 @@ configuration DemoConfiguration {
         Ensure = 'Present'
         Key = 'HKLM:\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\ICA-HTML5'
         ValueName = 'fPromptForPassword'
-        Force = True
+        Force =$true
         ValueData = '0'
         ValueType = 'DWORD'
       }
@@ -624,7 +624,7 @@ configuration DemoConfiguration {
         Ensure = 'Present'
         Key = 'HKLM:\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\ICA-HTML5'
         ValueName = 'fInheritMaxDisconnectionTime'
-        Force = True
+        Force =$true
         ValueData = '0'
         ValueType = 'DWORD'
       }
@@ -634,7 +634,7 @@ configuration DemoConfiguration {
         Ensure = 'Present'
         Key = 'HKLM:\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\ICA-HTML5'
         ValueName = 'MaxDisconnectionTime'
-        Force = True
+        Force =$true
         ValueData = '43200000'
         ValueType = 'DWORD'
       }
@@ -644,7 +644,7 @@ configuration DemoConfiguration {
         Ensure = 'Present'
         Key = 'HKLM:\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\ICA-HTML5'
         ValueName = 'fInheritMaxIdleTime'
-        Force = True
+        Force =$true
         ValueData = '0'
         ValueType = 'DWORD'
       }
@@ -654,7 +654,7 @@ configuration DemoConfiguration {
         Ensure = 'Present'
         Key = 'HKLM:\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\ICA-HTML5'
         ValueName = 'MaxIdleTime'
-        Force = True
+        Force =$true
         ValueData = '172800000'
         ValueType = 'DWORD'
       }
@@ -664,7 +664,7 @@ configuration DemoConfiguration {
         Ensure = 'Present'
         Key = 'HKLM:\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\ICA-HTML5'
         ValueName = 'fDisableExe'
-        Force = True
+        Force =$true
         ValueData = '1'
         ValueType = 'DWORD'
       }
