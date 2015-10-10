@@ -678,30 +678,6 @@ configuration DemoConfiguration {
         TaskPath = "\Microsoft\Windows\Defrag\"
         Disable = $true
     }
-    cScheduleTask MPIdleTask
-    {
-        #Disable Windows Defender Service
-        Ensure = "Present"
-        TaskName = "MPIdleTask"
-        TaskPath = "\Microsoft\Windows Defender\"
-        Disable = $true
-    }
-    cScheduleTask MP_Scheduled_Scan
-    {
-        #Disable Windows Defender Service
-        Ensure = "Present"
-        TaskName = "MP Scheduled Scan"
-        TaskPath = "\Microsoft\Windows Defender\"
-        Disable = $true
-    }
-    cScheduleTask SR
-    {
-        #Disable Windows System Restore
-        Ensure = "Present"
-        TaskName = "SR"
-        TaskPath = "\Microsoft\Windows\SystemRestore\"
-        Disable = $true
-    }
     cScheduleTask AitAgent
     {
         #
@@ -750,14 +726,6 @@ configuration DemoConfiguration {
         TaskPath = "\microsoft\windows\Customer Experience Improvement Program\"
         Disable = $true
     }
-    cScheduleTask Scheduled
-    {
-        #
-        Ensure = "Present"
-        TaskName = "Scheduled"
-        TaskPath = "\microsoft\windows\Diagnosis\"
-        Disable = $true
-    }
     cScheduleTask Microsoft-Windows-DiskDiagnosticDataCollector
     {
         #
@@ -772,22 +740,6 @@ configuration DemoConfiguration {
         Ensure = "Present"
         TaskName = "Microsoft-Windows-DiskDiagnosticResolver"
         TaskPath = "\microsoft\windows\DiskDiagnostic\"
-        Disable = $true
-    }
-    cScheduleTask WinSAT
-    {
-        #
-        Ensure = "Present"
-        TaskName = "WinSAT"
-        TaskPath = "\microsoft\windows\Maintenance\"
-        Disable = $true
-    }
-    cScheduleTask HotStart
-    {
-        #
-        Ensure = "Present"
-        TaskName = "HotStart"
-        TaskPath = "\microsoft\windows\MobilePC\"
         Disable = $true
     }
     cScheduleTask AnalyzeSystem
@@ -822,38 +774,6 @@ configuration DemoConfiguration {
         TaskPath = "\microsoft\windows\Registry\"
         Disable = $true
     }
-    cScheduleTask AutoWake
-    {
-        #
-        Ensure = "Present"
-        TaskName = "AutoWake"
-        TaskPath = "\microsoft\windows\SideShow\"
-        Disable = $true
-    }
-    cScheduleTask GadgetManager
-    {
-        #
-        Ensure = "Present"
-        TaskName = "GadgetManager"
-        TaskPath = "\microsoft\windows\SideShow\"
-        Disable = $true
-    }
-    cScheduleTask SessionAgent
-    {
-        #
-        Ensure = "Present"
-        TaskName = "SessionAgent"
-        TaskPath = "\microsoft\windows\SideShow\"
-        Disable = $true
-    }
-    cScheduleTask SystemDataProviders
-    {
-        #
-        Ensure = "Present"
-        TaskName = "SystemDataProviders"
-        TaskPath = "\microsoft\windows\SideShow\"
-        Disable = $true
-    }
     cScheduleTask ResolutionHost
     {
         #
@@ -868,22 +788,6 @@ configuration DemoConfiguration {
         Ensure = "Present"
         TaskName = "BfeOnServiceStartTypeChange"
         TaskPath = "\microsoft\windows\Windows Filtering Platform\"
-        Disable = $true
-    }
-    cScheduleTask UpdateLibrary
-    {
-        #
-        Ensure = "Present"
-        TaskName = "UpdateLibrary"
-        TaskPath = "\microsoft\windows\Windows Media Sharing\"
-        Disable = $true
-    }
-    cScheduleTask ConfigNotification
-    {
-        #
-        Ensure = "Present"
-        TaskName = "ConfigNotification"
-        TaskPath = "\microsoft\windows\WindowsBackup\"
         Disable = $true
     }
     cScheduleTask Maintenance_Configurator
