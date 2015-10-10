@@ -248,7 +248,7 @@ configuration DemoConfiguration {
       }
 #endregion
 #region Customizing Registry
-      Registry fPromptForPassword
+      Registry fPromptForPasswordTCP
       {
         #Always prompt client for password upon connection
         Ensure = 'Present'
@@ -308,7 +308,7 @@ configuration DemoConfiguration {
         ValueData = '1'
         ValueType = 'DWORD'
       }
-      Registry fPromptForPassword
+      Registry fPromptForPasswordRDP
       {
         #Always prompt client for password upon connection
         Ensure = 'Present'
@@ -368,7 +368,7 @@ configuration DemoConfiguration {
         ValueData = '1'
         ValueType = 'DWORD'
       }
-      Registry fPromptForPassword
+      Registry fPromptForPasswordICA
       {
         #Always prompt client for password upon connection
         Ensure = 'Present'
@@ -428,7 +428,7 @@ configuration DemoConfiguration {
         ValueData = '1'
         ValueType = 'DWORD'
       }
-      Registry fPromptForPassword
+      Registry fPromptForPasswordICA2
       {
         #Always prompt client for password upon connection
         Ensure = 'Present'
@@ -488,7 +488,7 @@ configuration DemoConfiguration {
         ValueData = '1'
         ValueType = 'DWORD'
       }
-      Registry fPromptForPassword
+      Registry fPromptForPasswordICA3
       {
         #Always prompt client for password upon connection
         Ensure = 'Present'
@@ -548,7 +548,7 @@ configuration DemoConfiguration {
         ValueData = '1'
         ValueType = 'DWORD'
       }
-      Registry fPromptForPassword
+      Registry fPromptForPasswordICA4
       {
         #Always prompt client for password upon connection
         Ensure = 'Present'
@@ -608,7 +608,7 @@ configuration DemoConfiguration {
         ValueData = '1'
         ValueType = 'DWORD'
       }
-      Registry fPromptForPassword
+      Registry fPromptForPasswordICA5
       {
         #Always prompt client for password upon connection
         Ensure = 'Present'
